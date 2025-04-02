@@ -7,7 +7,7 @@ interface EmailData {
   body: string;
 }
 
-interface ContactFormData {
+export interface ContactFormData {
   name: string;
   email: string;
   company: string;

@@ -117,13 +117,11 @@ const translations = {
     
     // Footer
     "about_us": "About Us",
-    "solutions": "Solutions",
     "on_premise_ai": "On-Premise AI",
     "enterprise_automation": "Enterprise Automation",
     "capacitaciones": "Capacitaciones Training",
     "it_infrastructure": "IT Infrastructure",
     "resources": "Resources",
-    "blog": "Blog",
     "whitepapers": "Whitepapers",
     "case_studies": "Case Studies",
     "documentation": "Documentation",
@@ -242,13 +240,11 @@ const translations = {
     
     // Footer
     "about_us": "Sobre Nosotros",
-    "solutions": "Soluciones",
     "on_premise_ai": "IA Local",
     "enterprise_automation": "Automatización Empresarial",
     "capacitaciones": "Capacitaciones",
     "it_infrastructure": "Infraestructura TI",
-    "resources": "Recursos",
-    "blog": "Blog",
+    "resources": "Recursos", 
     "whitepapers": "Documentos Técnicos",
     "case_studies": "Casos de Éxito",
     "documentation": "Documentación",

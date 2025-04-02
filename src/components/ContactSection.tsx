@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { submitContactForm, submitSubscription } from "@/services/emailService";
+import { submitContactForm, submitSubscription, ContactFormData } from "@/services/emailService";
 import { toast } from "@/components/ui/use-toast";
 import { useForm } from "react-hook-form";
 import {
@@ -57,7 +57,16 @@ const ContactSection = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     try {
-      await submitContactForm(values);
+      // Convert the form values to ContactFormData to ensure all required fields are present
+      const contactData: ContactFormData = {
+        name: values.name,
+        email: values.email,
+        company: values.company,
+        interest: values.interest,
+        message: values.message
+      };
+      
+      await submitContactForm(contactData);
       form.reset();
       toast({
         title: t("form_success"),
@@ -281,3 +290,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+

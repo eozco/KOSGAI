@@ -1,19 +1,24 @@
 
 import { CalendarClock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { blogPosts } from "@/data/blogData";
 
 const BlogPost = ({ 
   title, 
   category, 
   excerpt, 
   date, 
-  imageColor 
+  imageColor,
+  slug
 }: { 
   title: string, 
   category: string, 
   excerpt: string, 
   date: string,
-  imageColor: string
+  imageColor: string,
+  slug: string
 }) => {
   const { t } = useLanguage();
   
@@ -34,9 +39,9 @@ const BlogPost = ({
         </div>
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
         <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">{excerpt}</p>
-        <a href="#blog" className="text-ko-secondary hover:text-ko-primary transition-colors text-sm font-medium">
+        <Link to={`/blog/${slug}`} className="text-ko-secondary hover:text-ko-primary transition-colors text-sm font-medium">
           {t("read_more")} →
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -44,57 +49,7 @@ const BlogPost = ({
 
 const BlogSection = () => {
   const { t, language } = useLanguage();
-  
-  const blogPosts = {
-    en: [
-      {
-        title: "Fine-tuning Llama 3 for Enterprise Use Cases",
-        category: "AI Development",
-        date: "May 15, 2023",
-        excerpt: "Learn how to fine-tune Llama 3 models for specific business domains while maintaining high performance on limited hardware resources.",
-        imageColor: "bg-gradient-to-r from-ko-secondary/30 to-ko-accent/30 dark:from-ko-secondary/40 dark:to-ko-accent/40"
-      },
-      {
-        title: "Building Secure RAG Systems with Private Data",
-        category: "Security",
-        date: "June 2, 2023",
-        excerpt: "Strategies for implementing Retrieval Augmented Generation while ensuring data never leaves your secure infrastructure.",
-        imageColor: "bg-gradient-to-r from-ko-primary/30 to-ko-secondary/30 dark:from-ko-primary/40 dark:to-ko-secondary/40"
-      },
-      {
-        title: "Automating Microsoft 365 Workflows with n8n and AI",
-        category: "Automation",
-        date: "June 23, 2023",
-        excerpt: "Step-by-step guide to creating powerful Microsoft 365 automation workflows enhanced with AI decision-making capabilities.",
-        imageColor: "bg-gradient-to-r from-ko-accent/30 to-ko-primary/30 dark:from-ko-accent/40 dark:to-ko-primary/40"
-      }
-    ],
-    es: [
-      {
-        title: "Ajuste fino de Llama 3 para casos de uso empresarial",
-        category: "Desarrollo IA",
-        date: "15 Mayo, 2023",
-        excerpt: "Aprenda a ajustar modelos Llama 3 para dominios empresariales específicos manteniendo un alto rendimiento en recursos de hardware limitados.",
-        imageColor: "bg-gradient-to-r from-ko-secondary/30 to-ko-accent/30 dark:from-ko-secondary/40 dark:to-ko-accent/40"
-      },
-      {
-        title: "Construyendo sistemas RAG seguros con datos privados",
-        category: "Seguridad",
-        date: "2 Junio, 2023",
-        excerpt: "Estrategias para implementar Generación Aumentada por Recuperación asegurando que los datos nunca salgan de su infraestructura segura.",
-        imageColor: "bg-gradient-to-r from-ko-primary/30 to-ko-secondary/30 dark:from-ko-primary/40 dark:to-ko-secondary/40"
-      },
-      {
-        title: "Automatización de flujos de trabajo de Microsoft 365 con n8n e IA",
-        category: "Automatización",
-        date: "23 Junio, 2023",
-        excerpt: "Guía paso a paso para crear potentes flujos de trabajo de automatización de Microsoft 365 mejorados con capacidades de toma de decisiones con IA.",
-        imageColor: "bg-gradient-to-r from-ko-accent/30 to-ko-primary/30 dark:from-ko-accent/40 dark:to-ko-primary/40"
-      }
-    ]
-  };
-
-  const currentPosts = language === 'en' ? blogPosts.en : blogPosts.es;
+  const currentPosts = blogPosts[language];
 
   return (
     <section id="blog" className="py-20 relative overflow-hidden">
@@ -112,7 +67,7 @@ const BlogSection = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
-          {currentPosts.map((post, index) => (
+          {currentPosts.slice(0, 3).map((post, index) => (
             <BlogPost
               key={index}
               title={post.title}
@@ -120,8 +75,15 @@ const BlogSection = () => {
               excerpt={post.excerpt}
               date={post.date}
               imageColor={post.imageColor}
+              slug={post.slug}
             />
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button asChild variant="outline" size="lg">
+            <Link to="/blog">{t("view_all_posts")}</Link>
+          </Button>
         </div>
       </div>
     </section>

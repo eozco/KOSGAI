@@ -26,8 +26,7 @@ const translations = {
     
     // About Section
     "about_title": "About",
-    "our_team": "Our Team",
-    "careers": "Careers",
+    "company_desc": "Our Mission",
     
     // Solutions Section
     "solutions_title": "Our Solutions & Services",
@@ -79,6 +78,7 @@ const translations = {
     "blog_title": "Blog & Insights Hub",
     "blog_subtitle": "Expert perspectives on AI, automation, and secure infrastructure",
     "read_more": "Read more",
+    "view_all_posts": "View all blog posts",
     
     // Contact
     "contact_title": "Get in Touch",
@@ -86,8 +86,6 @@ const translations = {
     "contact_info": "Contact Information",
     "email_us": "Email Us",
     "call_us": "Call Us",
-    "ai_chatbot": "AI Chatbot",
-    "chat_with_ai": "Chat with AI",
     "join_community": "Join our community",
     "newsletter_desc": "Subscribe to our newsletter for the latest updates on AI, automation, and training opportunities.",
     "subscribe": "Subscribe",
@@ -100,11 +98,25 @@ const translations = {
     "interest_area": "Interest Area",
     "message": "Message",
     "message_placeholder": "Tell us about your needs...",
+    "form_success": "Thank you! Your message has been sent successfully.",
+    "form_error": "There was an error submitting your form. Please try again.",
+    
+    // Training
+    "training_section_title": "Capacitaciones: Enterprise AI Training",
+    "training_section_subtitle": "Comprehensive training programs to build AI and automation expertise within your organization",
+    "training_program_1": "Private AI Masterclass",
+    "training_program_2": "RAG System Implementation",
+    "training_program_3": "Enterprise Automation with n8n",
+    "training_program_4": "AI Security & Compliance",
+    "training_duration": "Duration",
+    "training_level": "Level",
+    "training_format": "Format",
+    "training_modules": "Modules",
+    "training_details": "View Details",
+    "training_register": "Register Interest",
     
     // Footer
     "about_us": "About Us",
-    "our_team": "Our Team",
-    "careers": "Careers",
     "solutions": "Solutions",
     "on_premise_ai": "On-Premise AI",
     "enterprise_automation": "Enterprise Automation",
@@ -139,8 +151,7 @@ const translations = {
     
     // About Section
     "about_title": "Nosotros",
-    "our_team": "Nuestro Equipo",
-    "careers": "Carreras",
+    "company_desc": "Nuestra Misión",
     
     // Solutions Section
     "solutions_title": "Nuestras Soluciones y Servicios",
@@ -192,6 +203,7 @@ const translations = {
     "blog_title": "Blog y Centro de Conocimiento",
     "blog_subtitle": "Perspectivas expertas sobre IA, automatización e infraestructura segura",
     "read_more": "Leer más",
+    "view_all_posts": "Ver todas las entradas del blog",
     
     // Contact
     "contact_title": "Contáctenos",
@@ -199,8 +211,6 @@ const translations = {
     "contact_info": "Información de Contacto",
     "email_us": "Envíenos un Correo",
     "call_us": "Llámenos",
-    "ai_chatbot": "Chatbot con IA",
-    "chat_with_ai": "Chatear con IA",
     "join_community": "Únase a nuestra comunidad",
     "newsletter_desc": "Suscríbase a nuestro boletín para recibir las últimas actualizaciones sobre IA, automatización y oportunidades de capacitación.",
     "subscribe": "Suscribirse",
@@ -213,11 +223,25 @@ const translations = {
     "interest_area": "Área de Interés",
     "message": "Mensaje",
     "message_placeholder": "Cuéntenos sobre sus necesidades...",
+    "form_success": "¡Gracias! Su mensaje ha sido enviado exitosamente.",
+    "form_error": "Hubo un error al enviar su formulario. Por favor intente nuevamente.",
+    
+    // Training
+    "training_section_title": "Capacitaciones: Formación en IA Empresarial",
+    "training_section_subtitle": "Programas de formación integrales para desarrollar experiencia en IA y automatización en su organización",
+    "training_program_1": "Masterclass de IA Privada",
+    "training_program_2": "Implementación de Sistemas RAG",
+    "training_program_3": "Automatización Empresarial con n8n",
+    "training_program_4": "Seguridad y Conformidad en IA",
+    "training_duration": "Duración",
+    "training_level": "Nivel",
+    "training_format": "Formato",
+    "training_modules": "Módulos",
+    "training_details": "Ver Detalles",
+    "training_register": "Registrar Interés",
     
     // Footer
     "about_us": "Sobre Nosotros",
-    "our_team": "Nuestro Equipo",
-    "careers": "Carreras",
     "solutions": "Soluciones",
     "on_premise_ai": "IA Local",
     "enterprise_automation": "Automatización Empresarial",

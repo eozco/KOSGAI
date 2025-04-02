@@ -7,6 +7,7 @@ import SolutionsSection from '@/components/SolutionsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import BlogSection from '@/components/BlogSection';
 import ContactSection from '@/components/ContactSection';
+import TrainingSection from '@/components/TrainingSection';
 import Footer from '@/components/Footer';
 import ParticleNetwork from '@/components/ParticleNetwork';
 import { LanguageProvider } from '@/contexts/LanguageContext';
@@ -26,6 +27,7 @@ const Index = () => {
           <HeroSection />
           <AboutSection />
           <SolutionsSection />
+          <TrainingSection />
           <CaseStudiesSection />
           <BlogSection />
           <ContactSection />

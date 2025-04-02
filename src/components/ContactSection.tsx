@@ -1,47 +1,80 @@
 
 import { useState } from "react";
-import { MessageSquare, Mail, PhoneCall } from "lucide-react";
+import { Mail, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { submitContactForm, submitSubscription } from "@/services/emailService";
+import { toast } from "@/components/ui/use-toast";
+import { useForm } from "react-hook-form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribeEmail, setSubscribeEmail] = useState("");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    interest: "On-Premise AI Solutions",
-    message: ""
+
+  // Define form schema with Zod
+  const formSchema = z.object({
+    name: z.string().min(2, {
+      message: "Name must be at least 2 characters.",
+    }),
+    email: z.string().email({
+      message: "Please enter a valid email address.",
+    }),
+    company: z.string().min(1, {
+      message: "Company name is required.",
+    }),
+    interest: z.string(),
+    message: z.string().min(10, {
+      message: "Message must be at least 10 characters.",
+    }),
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  // Initialize form with react-hook-form and zod resolver
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      company: "",
+      interest: "On-Premise AI Solutions",
+      message: "",
+    },
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // Form submission handler
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     try {
-      await submitContactForm(formData);
-      // Clear form on success
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        interest: "On-Premise AI Solutions",
-        message: ""
+      await submitContactForm(values);
+      form.reset();
+      toast({
+        title: t("form_success"),
+        description: t("form_success"),
+      });
+    } catch (error) {
+      toast({
+        title: t("form_error"),
+        description: t("form_error"),
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  // Newsletter subscription handler
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!subscribeEmail) return;
@@ -50,6 +83,16 @@ const ContactSection = () => {
     try {
       await submitSubscription({ email: subscribeEmail });
       setSubscribeEmail("");
+      toast({
+        title: t("form_success"),
+        description: "Thank you for subscribing to our newsletter!",
+      });
+    } catch (error) {
+      toast({
+        title: t("form_error"),
+        description: t("form_error"),
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -94,24 +137,6 @@ const ContactSection = () => {
                   <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
                 </div>
               </div>
-              
-              <div className="flex items-start">
-                <div className="mr-4 p-2 rounded-full bg-ko-primary/20 dark:bg-ko-primary/30 text-ko-primary">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">{t("ai_chatbot")}</h4>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {t("ai_chatbot_desc")}
-                  </p>
-                  <Button 
-                    variant="outline" 
-                    className="mt-2 border-ko-secondary text-ko-secondary hover:bg-ko-secondary/10"
-                  >
-                    {t("chat_with_ai")}
-                  </Button>
-                </div>
-              </div>
             </div>
             
             <div className="mt-10 p-6 glassmorphism rounded-xl">
@@ -139,98 +164,115 @@ const ContactSection = () => {
           <div className="bg-white/50 dark:bg-ko-dark/50 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
             <h3 className="text-xl font-bold mb-6">{t("request_demo_form")}</h3>
             
-            <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    {t("full_name")}
-                  </label>
-                  <Input 
-                    id="name"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
                     name="name"
-                    placeholder="John Doe"
-                    className="bg-white/80 dark:bg-gray-900/80"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("full_name")}</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder="John Doe" 
+                            className="bg-white/80 dark:bg-gray-900/80" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    {t("email_address")}
-                  </label>
-                  <Input 
-                    id="email"
+                  
+                  <FormField
+                    control={form.control}
                     name="email"
-                    type="email" 
-                    placeholder="john@company.com"
-                    className="bg-white/80 dark:bg-gray-900/80"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("email_address")}</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder="john@company.com" 
+                            className="bg-white/80 dark:bg-gray-900/80" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-1">
-                    {t("company")}
-                  </label>
-                  <Input 
-                    id="company"
+                  
+                  <FormField
+                    control={form.control}
                     name="company"
-                    placeholder={t("your_company")}
-                    className="bg-white/80 dark:bg-gray-900/80"
-                    value={formData.company}
-                    onChange={handleChange}
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("company")}</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder={t("your_company")} 
+                            className="bg-white/80 dark:bg-gray-900/80" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="interest"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("interest_area")}</FormLabel>
+                        <FormControl>
+                          <select 
+                            className="w-full rounded-md border border-input bg-white/80 dark:bg-gray-900/80 px-3 py-2 text-sm ring-offset-background"
+                            {...field}
+                          >
+                            <option>On-Premise AI Solutions</option>
+                            <option>Enterprise Automation</option>
+                            <option>Training & Upskilling</option>
+                            <option>Secure IT Infrastructure</option>
+                            <option>Other</option>
+                          </select>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="interest" className="block text-sm font-medium mb-1">
-                    {t("interest_area")}
-                  </label>
-                  <select 
-                    id="interest"
-                    name="interest"
-                    className="w-full rounded-md border border-input bg-white/80 dark:bg-gray-900/80 px-3 py-2 text-sm ring-offset-background"
-                    value={formData.interest}
-                    onChange={handleChange}
-                  >
-                    <option>On-Premise AI Solutions</option>
-                    <option>Enterprise Automation</option>
-                    <option>Training & Upskilling</option>
-                    <option>Secure IT Infrastructure</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  {t("message")}
-                </label>
-                <Textarea 
-                  id="message"
+                <FormField
+                  control={form.control}
                   name="message"
-                  placeholder={t("message_placeholder")}
-                  rows={4}
-                  className="bg-white/80 dark:bg-gray-900/80"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t("message")}</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          placeholder={t("message_placeholder")} 
+                          rows={4}
+                          className="bg-white/80 dark:bg-gray-900/80" 
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-ko-secondary to-ko-accent hover:opacity-90"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : t("request_demo")}
-              </Button>
-            </form>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-ko-secondary to-ko-accent hover:opacity-90"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : t("request_demo")}
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
       </div>

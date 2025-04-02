@@ -18,7 +18,7 @@ const TrainingSection = () => {
 
   const trainingPrograms: TrainingProgram[] = [
     {
-      title: t("training_program_1_title"),
+      title: language === "en" ? "Advanced AI Implementation" : "Implementación Avanzada de IA",
       level: language === "en" ? "Advanced" : "Avanzado",
       duration: language === "en" ? "3 days" : "3 días",
       format: language === "en" ? "In-person / Virtual" : "Presencial / Virtual",
@@ -32,7 +32,7 @@ const TrainingSection = () => {
       icon: <BookOpen className="w-8 h-8 text-ko-secondary" />
     },
     {
-      title: t("training_program_2_title"),
+      title: language === "en" ? "RAG Systems Architecture" : "Arquitectura de Sistemas RAG",
       level: language === "en" ? "Intermediate" : "Intermedio",
       duration: language === "en" ? "2 days" : "2 días",
       format: language === "en" ? "Virtual" : "Virtual",
@@ -46,7 +46,7 @@ const TrainingSection = () => {
       icon: <Layers className="w-8 h-8 text-ko-primary" />
     },
     {
-      title: t("training_program_3_title"),
+      title: language === "en" ? "n8n and AI Workflows" : "n8n y Flujos de Trabajo con IA",
       level: language === "en" ? "Beginner to Intermediate" : "Principiante a Intermedio",
       duration: language === "en" ? "2 days" : "2 días",
       format: language === "en" ? "Virtual / Self-paced" : "Virtual / A su ritmo",
@@ -60,7 +60,7 @@ const TrainingSection = () => {
       icon: <Users className="w-8 h-8 text-ko-accent" />
     },
     {
-      title: t("training_program_4_title"),
+      title: language === "en" ? "AI Security and Compliance" : "Seguridad y Cumplimiento en IA",
       level: language === "en" ? "Intermediate" : "Intermedio",
       duration: language === "en" ? "2 days" : "2 días",
       format: language === "en" ? "Virtual" : "Virtual",
@@ -76,17 +76,17 @@ const TrainingSection = () => {
   ];
 
   return (
-    <section id="training" className="py-20 relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-ko-primary/10 dark:bg-ko-primary/20 rounded-full filter blur-3xl"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("training_section_title")} <span className="text-gradient">& Upskilling</span></h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            {t("training_section_subtitle")}
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-ko-dark">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">
+            {language === "en" ? "Training & Upskilling" : "Capacitaciones: Formación en IA Empresarial & Upskilling"}
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400">
+            {language === "en" 
+              ? "Comprehensive training programs to develop expertise in AI and automation within your organization"
+              : "Programas de formación integrales para desarrollar experiencia en IA y automatización en su organización"
+            }
           </p>
         </div>
         
@@ -137,10 +137,10 @@ const TrainingSection = () => {
                 
                 <div className="flex flex-wrap gap-3">
                   <Button variant="outline" size="sm" className="text-ko-secondary border-ko-secondary hover:bg-ko-secondary/10">
-                    {t("training_details")}
+                    {language === "en" ? "Details" : "Detalles"}
                   </Button>
                   <Button size="sm" className="bg-gradient-to-r from-ko-secondary to-ko-accent hover:opacity-90">
-                    {t("training_register")}
+                    {language === "en" ? "Register" : "Registrarse"}
                   </Button>
                 </div>
               </div>

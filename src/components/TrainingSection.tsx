@@ -1,4 +1,3 @@
-
 import { BookOpen, Clock, Users, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -19,9 +18,9 @@ const TrainingSection = () => {
 
   const trainingPrograms: TrainingProgram[] = [
     {
-      title: t("training_program_1"),
+      title: t("training_program_1_title"),
       level: language === "en" ? "Advanced" : "Avanzado",
-      duration: language === "en" ? "2 days" : "2 días",
+      duration: language === "en" ? "3 days" : "3 días",
       format: language === "en" ? "In-person / Virtual" : "Presencial / Virtual",
       modules: [
         language === "en" ? "Introduction to private AI deployment" : "Introducción a la implementación de IA privada",
@@ -33,9 +32,9 @@ const TrainingSection = () => {
       icon: <BookOpen className="w-8 h-8 text-ko-secondary" />
     },
     {
-      title: t("training_program_2"),
+      title: t("training_program_2_title"),
       level: language === "en" ? "Intermediate" : "Intermedio",
-      duration: language === "en" ? "1 day" : "1 día",
+      duration: language === "en" ? "2 days" : "2 días",
       format: language === "en" ? "Virtual" : "Virtual",
       modules: [
         language === "en" ? "RAG system architecture" : "Arquitectura de sistemas RAG",
@@ -47,9 +46,9 @@ const TrainingSection = () => {
       icon: <Layers className="w-8 h-8 text-ko-primary" />
     },
     {
-      title: t("training_program_3"),
+      title: t("training_program_3_title"),
       level: language === "en" ? "Beginner to Intermediate" : "Principiante a Intermedio",
-      duration: language === "en" ? "1 day" : "1 día",
+      duration: language === "en" ? "2 days" : "2 días",
       format: language === "en" ? "Virtual / Self-paced" : "Virtual / A su ritmo",
       modules: [
         language === "en" ? "n8n basics & workflow design" : "Conceptos básicos de n8n y diseño de flujos de trabajo",
@@ -61,9 +60,9 @@ const TrainingSection = () => {
       icon: <Users className="w-8 h-8 text-ko-accent" />
     },
     {
-      title: t("training_program_4"),
+      title: t("training_program_4_title"),
       level: language === "en" ? "Intermediate" : "Intermedio",
-      duration: language === "en" ? "1 day" : "1 día",
+      duration: language === "en" ? "2 days" : "2 días",
       format: language === "en" ? "Virtual" : "Virtual",
       modules: [
         language === "en" ? "AI security fundamentals" : "Fundamentos de seguridad en IA",

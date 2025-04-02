@@ -140,20 +140,14 @@ const translations = {
     "form_error": "There was an error submitting your form. Please try again.",
     
     // Training
-    "training_title": "Training & Upskilling",
-    "training_desc": "Empower your teams with the knowledge to leverage AI and automation.",
     "training_section_title": "Training & Upskilling",
     "training_section_subtitle": "Comprehensive training programs to develop expertise in AI and automation within your organization",
-    "training_program_1": "Private AI Masterclass",
-    "training_program_2": "RAG System Implementation",
-    "training_program_3": "Enterprise Automation with n8n",
-    "training_program_4": "AI Security & Compliance",
-    "training_duration": "Duration",
-    "training_level": "Level",
-    "training_format": "Format",
-    "training_modules": "Modules",
-    "training_details": "View Details",
-    "training_register": "Register Interest",
+    "training_program_1_title": "AI Fundamentals for Business",
+    "training_program_1_desc": "Learn the basics of AI and how to apply them in your business context.",
+    "training_program_2_title": "Advanced Automation Techniques",
+    "training_program_2_desc": "Master advanced automation strategies and tools for enterprise workflows.",
+    "training_program_3_title": "AI Implementation Workshop",
+    "training_program_3_desc": "Hands-on workshop for implementing AI solutions in your organization.",
     
     // Footer
     "about_us": "About Us",
@@ -304,20 +298,14 @@ const translations = {
     "form_error": "Hubo un error al enviar su formulario. Por favor, inténtelo de nuevo.",
     
     // Training
-    "training_title": "Capacitaciones: Formación en IA Empresarial",
-    "training_desc": "Capacite a sus equipos con el conocimiento para aprovechar la IA y la automatización.",
     "training_section_title": "Capacitaciones: Formación en IA Empresarial",
     "training_section_subtitle": "Programas de formación integrales para desarrollar experiencia en IA y automatización en su organización",
-    "training_program_1": "Masterclass de IA Privada",
-    "training_program_2": "Implementación de Sistemas RAG",
-    "training_program_3": "Automatización Empresarial con n8n",
-    "training_program_4": "Seguridad y Conformidad en IA",
-    "training_duration": "Duración",
-    "training_level": "Nivel",
-    "training_format": "Formato",
-    "training_modules": "Módulos",
-    "training_details": "Ver Detalles",
-    "training_register": "Registrar Interés",
+    "training_program_1_title": "Fundamentos de IA para Empresas",
+    "training_program_1_desc": "Aprenda los conceptos básicos de IA y cómo aplicarlos en su contexto empresarial.",
+    "training_program_2_title": "Técnicas Avanzadas de Automatización",
+    "training_program_2_desc": "Domine estrategias y herramientas avanzadas de automatización para flujos de trabajo empresariales.",
+    "training_program_3_title": "Taller de Implementación de IA",
+    "training_program_3_desc": "Taller práctico para implementar soluciones de IA en su organización.",
     
     // Footer
     "about_us": "Sobre Nosotros",

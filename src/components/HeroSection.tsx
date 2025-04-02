@@ -1,8 +1,42 @@
 
 import { ArrowRight, Server, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { toast } from "@/components/ui/use-toast";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  const [demoRequested, setDemoRequested] = useState(false);
+
+  const handleDeployAIClick = () => {
+    // Scroll to solutions section
+    document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" });
+    toast({
+      title: "AI Deployment Info",
+      description: "Contact us to learn more about deploying AI locally in your organization.",
+    });
+  };
+
+  const handleExploreAutomationClick = () => {
+    // Scroll to automation section within solutions
+    document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" });
+    toast({
+      title: "Enterprise Automation",
+      description: "Discover how our n8n workflows can automate your business processes.",
+    });
+  };
+
+  const handleJoinCursosClick = () => {
+    // Scroll to training section
+    document.getElementById("training")?.scrollIntoView({ behavior: "smooth" });
+    toast({
+      title: "Cursos Learning Platform",
+      description: "Join our comprehensive AI training programs.",
+    });
+  };
+
   return (
     <section 
       id="home" 
@@ -17,30 +51,41 @@ const HeroSection = () => {
       <div className="container relative z-10 px-4 py-16 mx-auto text-center">
         {/* Eyebrow text with glow */}
         <div className="mb-4 inline-block px-4 py-1 rounded-full bg-ko-primary/10 dark:bg-ko-primary/20 text-ko-primary dark:text-ko-light font-medium text-sm">
-          Secure. Scalable. Local.
+          {t("hero_subtitle")}
         </div>
 
         {/* Main heading with gradient effect */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Enterprise <span className="text-gradient">AI & Automation</span> <br className="hidden sm:block" />
+          {t("hero_title")} <span className="text-gradient">& Automation</span> <br className="hidden sm:block" />
           for the Future
         </h1>
         
         <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-          Empower your business with private AI, automation, and secure on-premise solutions that put you in control of your data and workflows.
+          {t("hero_description")}
         </p>
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button className="text-md px-6 py-6 bg-ko-secondary hover:bg-ko-primary transition-all flex items-center gap-2 ai-glow">
-            Deploy your AI locally
+          <Button 
+            className="text-md px-6 py-6 bg-ko-secondary hover:bg-ko-primary transition-all flex items-center gap-2 ai-glow"
+            onClick={handleDeployAIClick}
+          >
+            {t("deploy_ai")}
             <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
-          <Button variant="outline" className="text-md px-6 py-6 border-ko-primary hover:bg-ko-primary/10 dark:hover:bg-ko-primary/20 transition-all">
-            Explore enterprise automation
+          <Button 
+            variant="outline" 
+            className="text-md px-6 py-6 border-ko-primary hover:bg-ko-primary/10 dark:hover:bg-ko-primary/20 transition-all"
+            onClick={handleExploreAutomationClick}
+          >
+            {t("explore_automation")}
           </Button>
-          <Button variant="ghost" className="text-md px-6 py-6 hover:bg-ko-accent/10 transition-all">
-            <span>Join Cursos learning platform</span>
+          <Button 
+            variant="ghost" 
+            className="text-md px-6 py-6 hover:bg-ko-accent/10 transition-all"
+            onClick={handleJoinCursosClick}
+          >
+            <span>{t("join_cursos")}</span>
           </Button>
         </div>
         
@@ -50,9 +95,9 @@ const HeroSection = () => {
             <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-ko-secondary/20 dark:bg-ko-secondary/30 flex items-center justify-center">
               <Server className="w-6 h-6 text-ko-secondary" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">On-Premise AI</h3>
+            <h3 className="text-lg font-semibold mb-2">{t("onprem_ai_title")}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Private AI deployments with LLama, DeepSeek, and Mistral
+              {t("feature_private_ai")}
             </p>
           </div>
           
@@ -60,9 +105,9 @@ const HeroSection = () => {
             <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-ko-accent/20 dark:bg-ko-accent/30 flex items-center justify-center">
               <Zap className="w-6 h-6 text-ko-accent" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Enterprise Automation</h3>
+            <h3 className="text-lg font-semibold mb-2">{t("automation_title")}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              AI-enhanced automation workflows with n8n integration
+              {t("feature_ai_workflows")}
             </p>
           </div>
           
@@ -70,9 +115,9 @@ const HeroSection = () => {
             <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-ko-primary/20 dark:bg-ko-primary/30 flex items-center justify-center">
               <Shield className="w-6 h-6 text-ko-primary" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Secure Infrastructure</h3>
+            <h3 className="text-lg font-semibold mb-2">{t("infrastructure_title")}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              End-to-end data encryption & privacy-first architecture
+              {t("feature_encryption")}
             </p>
           </div>
         </div>

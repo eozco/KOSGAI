@@ -17,6 +17,7 @@ const LanguageToggle = () => {
       size="sm" 
       onClick={toggleLanguage}
       className="font-medium flex items-center gap-1 transition-all hover:bg-gradient-to-r hover:from-ko-secondary/20 hover:to-ko-primary/20"
+      aria-label={language === "en" ? "Switch to Spanish" : "Cambiar a Inglés"}
     >
       <Globe className="h-4 w-4" />
       <motion.span

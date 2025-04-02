@@ -1,4 +1,3 @@
-
 import { BarChart, Users, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -46,9 +45,9 @@ const CaseStudiesSection = () => {
   
   const caseStudies = [
     {
-      title: "AI-Powered Document Processing",
-      company: "Global Financial Institution",
-      description: "Implemented on-premise Llama model for secure document processing, reducing manual review time while maintaining data privacy compliance.",
+      title: t("case_study_1_subtitle"),
+      company: t("case_study_1_title"),
+      description: t("case_study_1_desc"),
       metrics: [
         { icon: BarChart, label: t("efficiency"), value: "87%" },
         { icon: Users, label: t("adoption"), value: "100%" },
@@ -56,9 +55,9 @@ const CaseStudiesSection = () => {
       ]
     },
     {
-      title: "Automated Workflow Transformation",
-      company: "Manufacturing Enterprise",
-      description: "Deployed n8n workflows with AI decision nodes to streamline operations across supply chain and inventory management processes.",
+      title: t("case_study_2_subtitle"),
+      company: t("case_study_2_title"),
+      description: t("case_study_2_desc"),
       metrics: [
         { icon: BarChart, label: t("cost_savings"), value: "42%" },
         { icon: Users, label: t("departments"), value: "5+" },
@@ -66,9 +65,9 @@ const CaseStudiesSection = () => {
       ]
     },
     {
-      title: "Secure AI Assistant Deployment",
-      company: "Legal Services Provider",
-      description: "Implemented RAG-powered knowledge base assistant using Koboldcpp and fine-tuned Mistral model for internal legal research.",
+      title: t("case_study_3_subtitle"),
+      company: t("case_study_3_title"),
+      description: t("case_study_3_desc"),
       metrics: [
         { icon: BarChart, label: t("accuracy"), value: "94%" },
         { icon: Users, label: t("daily_users"), value: "150+" },
@@ -76,9 +75,9 @@ const CaseStudiesSection = () => {
       ]
     },
     {
-      title: "Enterprise AI Training Program",
-      company: "Technology Conglomerate",
-      description: "Developed custom Capacitaciones learning paths for technical and non-technical staff, enabling organization-wide AI literacy and adoption.",
+      title: t("case_study_4_subtitle"),
+      company: t("case_study_4_title"),
+      description: t("case_study_4_desc"),
       metrics: [
         { icon: BarChart, label: t("completion"), value: "92%" },
         { icon: Users, label: t("staff_trained"), value: "1200+" },

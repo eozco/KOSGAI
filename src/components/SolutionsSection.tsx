@@ -1,4 +1,3 @@
-
 import { Server, Workflow, BookOpen, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 

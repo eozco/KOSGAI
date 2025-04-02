@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Mail, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -116,7 +115,7 @@ const ContactSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("contact_title")} <span className="text-gradient">Touch</span></h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("contact_title")}</h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             {t("contact_subtitle")}
           </p>
@@ -133,7 +132,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold">{t("email_us")}</h4>
-                  <p className="text-gray-600 dark:text-gray-400">info@kosoluciones.com</p>
+                  <p className="text-gray-600 dark:text-gray-400">info@kosolucionesgenerales.com</p>
                 </div>
               </div>
               
@@ -143,7 +142,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold">{t("call_us")}</h4>
-                  <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+                  <p className="text-gray-600 dark:text-gray-400">+52 331 319 5542</p>
                 </div>
               </div>
             </div>

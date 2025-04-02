@@ -1,4 +1,3 @@
-
 import { ArrowRight, Server, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -57,7 +56,7 @@ const HeroSection = () => {
         {/* Main heading with gradient effect */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
           {t("hero_title")} <br className="hidden sm:block" />
-          for the Future
+          {t("hero_future")}
         </h1>
         
         <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
@@ -66,26 +65,25 @@ const HeroSection = () => {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button 
-            className="text-md px-6 py-6 bg-ko-secondary hover:bg-ko-primary transition-all flex items-center gap-2 ai-glow"
+          <Button
             onClick={handleDeployAIClick}
+            className="bg-ko-primary hover:bg-ko-primary/90 text-white px-8 py-6 text-lg"
           >
             {t("deploy_ai")}
-            <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
-          <Button 
-            variant="outline" 
-            className="text-md px-6 py-6 border-ko-primary hover:bg-ko-primary/10 dark:hover:bg-ko-primary/20 transition-all"
+          <Button
             onClick={handleExploreAutomationClick}
+            variant="outline"
+            className="border-ko-accent text-ko-accent hover:bg-ko-accent/10 px-8 py-6 text-lg"
           >
             {t("explore_automation")}
           </Button>
-          <Button 
-            variant="ghost" 
-            className="text-md px-6 py-6 hover:bg-ko-accent/10 transition-all"
+          <Button
             onClick={handleJoinCursosClick}
+            variant="outline"
+            className="border-ko-primary text-ko-primary hover:bg-ko-primary/10 px-8 py-6 text-lg"
           >
-            <span>{t("join_cursos")}</span>
+            {t("join_cursos")}
           </Button>
         </div>
         

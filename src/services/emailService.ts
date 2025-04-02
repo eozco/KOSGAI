@@ -1,4 +1,3 @@
-
 import { toast } from "@/components/ui/use-toast";
 
 interface EmailData {
@@ -37,7 +36,7 @@ export const sendEmail = async (data: EmailData): Promise<boolean> => {
 
 export const submitContactForm = async (formData: ContactFormData): Promise<boolean> => {
   const emailData: EmailData = {
-    to: "info@kosoluciones.com",
+    to: "info@kosolucionesgenerales.com",
     subject: `Demo Request from ${formData.name} - ${formData.company}`,
     body: `
       Name: ${formData.name}

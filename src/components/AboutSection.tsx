@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {
   const { t } = useLanguage();
-  
+
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       {/* Background accents */}

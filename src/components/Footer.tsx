@@ -1,5 +1,4 @@
-
-import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Logo from "./Logo";
 
@@ -15,8 +14,6 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">KO Soluciones</h3>
             <ul className="space-y-2">
               <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("about_us")}</a></li>
-              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("our_team")}</a></li>
-              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("careers")}</a></li>
               <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("contact")}</a></li>
             </ul>
           </div>
@@ -42,12 +39,24 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">{t("legal")}</h3>
+            <h3 className="font-bold text-lg mb-4">{t("contact_info")}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("privacy_policy")}</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("terms_of_service")}</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("cookie_policy")}</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("gdpr_compliance")}</a></li>
+              <li className="flex items-center text-gray-600 dark:text-gray-400">
+                <Mail className="w-4 h-4 mr-2" />
+                <a href="mailto:info@kosolucionesgenerales.com" className="hover:text-ko-secondary transition-colors">
+                  info@kosolucionesgenerales.com
+                </a>
+              </li>
+              <li className="flex items-center text-gray-600 dark:text-gray-400">
+                <Phone className="w-4 h-4 mr-2" />
+                <a href="tel:+523313195542" className="hover:text-ko-secondary transition-colors">
+                  +52 331 319 5542
+                </a>
+              </li>
+              <li className="flex items-center text-gray-600 dark:text-gray-400">
+                <MapPin className="w-4 h-4 mr-2" />
+                Guadalajara, México
+              </li>
             </ul>
           </div>
         </div>

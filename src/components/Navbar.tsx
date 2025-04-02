@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,24 +24,24 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
-              <a href="#home" className="px-3 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
+          <div className="hidden md:flex items-center">
+            <div className="flex items-center space-x-1 ml-2">
+              <a href="#home" className="px-2 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
                 {t("home")}
               </a>
-              <a href="#about" className="px-3 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
+              <a href="#about" className="px-2 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
                 {t("about")}
               </a>
-              <a href="#solutions" className="px-3 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
+              <a href="#solutions" className="px-2 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
                 {t("solutions")}
               </a>
-              <a href="#case-studies" className="px-3 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
+              <a href="#case-studies" className="px-2 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
                 {t("case-studies")}
               </a>
-              <a href="#blog" className="px-3 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
+              <a href="#blog" className="px-2 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
                 {t("blog")}
               </a>
-              <a href="#contact" className="px-3 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
+              <a href="#contact" className="px-2 py-2 text-sm font-medium hover:text-ko-secondary transition-colors duration-200">
                 {t("contact")}
               </a>
             </div>

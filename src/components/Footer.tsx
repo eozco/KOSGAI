@@ -1,7 +1,10 @@
 
 import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import Logo from "./Logo";
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   
   return (
@@ -11,48 +14,47 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">KO Soluciones</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Our Team</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Careers</a></li>
-              <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Contact</a></li>
+              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("about_us")}</a></li>
+              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("our_team")}</a></li>
+              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("careers")}</a></li>
+              <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("contact")}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Solutions</h3>
+            <h3 className="font-bold text-lg mb-4">{t("solutions")}</h3>
             <ul className="space-y-2">
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">On-Premise AI</a></li>
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Enterprise Automation</a></li>
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Cursos Training</a></li>
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">IT Infrastructure</a></li>
+              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("on_premise_ai")}</a></li>
+              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("enterprise_automation")}</a></li>
+              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("capacitaciones")}</a></li>
+              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("it_infrastructure")}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Resources</h3>
+            <h3 className="font-bold text-lg mb-4">{t("resources")}</h3>
             <ul className="space-y-2">
-              <li><a href="#blog" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Whitepapers</a></li>
-              <li><a href="#case-studies" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Case Studies</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Documentation</a></li>
+              <li><a href="#blog" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("blog")}</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("whitepapers")}</a></li>
+              <li><a href="#case-studies" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("case_studies")}</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("documentation")}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">Legal</h3>
+            <h3 className="font-bold text-lg mb-4">{t("legal")}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">Cookie Policy</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">GDPR Compliance</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("privacy_policy")}</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("terms_of_service")}</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("cookie_policy")}</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("gdpr_compliance")}</a></li>
             </ul>
           </div>
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200 dark:border-gray-800">
           <div className="flex items-center mb-4 md:mb-0">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-ko-secondary to-ko-accent mr-2"></div>
-            <span className="font-bold text-lg">KO Soluciones</span>
+            <Logo />
           </div>
           
           <div className="flex space-x-4 mb-4 md:mb-0">
@@ -75,7 +77,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-gray-600 dark:text-gray-400">
-            &copy; {currentYear} KO Soluciones Generales. All rights reserved.
+            &copy; {currentYear} KO Soluciones Generales. {t("rights_reserved")}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 
 import { Server, Workflow, BookOpen, Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SolutionCard = ({ 
   icon: Icon, 
@@ -36,53 +37,55 @@ const SolutionCard = ({
 };
 
 const SolutionsSection = () => {
+  const { t } = useLanguage();
+  
   const solutions = [
     {
       icon: Server,
-      title: "On-Prem AI & Business Intelligence",
-      description: "Deploy AI models within your secure infrastructure for complete data control.",
+      title: t("onprem_ai_title"),
+      description: t("onprem_ai_desc"),
       iconColor: "bg-ko-secondary/20 text-ko-secondary dark:bg-ko-secondary/30",
       features: [
-        "Private AI deployments with Llama, DeepSeek, Mistral",
-        "Secure, self-hosted AI chatbots & assistants",
-        "RAG-powered AI for internal knowledge retrieval",
-        "Enterprise document & email analysis with AI insights"
+        t("feature_private_ai"),
+        t("feature_secure_chatbots"),
+        t("feature_rag"),
+        t("feature_doc_analysis")
       ]
     },
     {
       icon: Workflow,
-      title: "Enterprise Automation with n8n",
-      description: "Connect AI capabilities with your business operations through intelligent workflows.",
+      title: t("automation_title"),
+      description: t("automation_desc"),
       iconColor: "bg-ko-accent/20 text-ko-accent dark:bg-ko-accent/30",
       features: [
-        "AI-enhanced automation workflows for departments",
-        "Secure Microsoft 365 & SharePoint integration",
-        "Automated data pipelines connecting AI models",
-        "Custom workflow development & integration"
+        t("feature_ai_workflows"),
+        t("feature_microsoft"),
+        t("feature_pipelines"),
+        t("feature_custom_workflows")
       ]
     },
     {
       icon: BookOpen,
-      title: "Cursos: Training & Upskilling",
-      description: "Empower your teams with the knowledge to leverage AI and automation.",
+      title: t("training_title"),
+      description: t("training_desc"),
       iconColor: "bg-ko-primary/20 text-ko-primary dark:bg-ko-primary/30",
       features: [
-        "Masterclasses on Private AI, RAG & Fine-Tuning",
-        "Hands-on training with various AI technologies",
-        "Enterprise AI certification programs",
-        "Customized learning paths for organizations"
+        t("feature_masterclasses"),
+        t("feature_hands_on"),
+        t("feature_certification"),
+        t("feature_learning")
       ]
     },
     {
       icon: Shield,
-      title: "Secure IT Infrastructure & Local AI",
-      description: "Build robust foundations for your AI and automation initiatives.",
+      title: t("infrastructure_title"),
+      description: t("infrastructure_desc"),
       iconColor: "bg-ko-secondary/20 text-ko-secondary dark:bg-ko-secondary/30",
       features: [
-        "On-prem, cloud, and hybrid AI hosting solutions",
-        "Docker & Kubernetes orchestration for scaling",
-        "End-to-end data encryption & security protocols",
-        "Privacy-first architecture design & implementation"
+        t("feature_hosting"),
+        t("feature_docker"),
+        t("feature_encryption"),
+        t("feature_architecture")
       ]
     }
   ];
@@ -96,9 +99,9 @@ const SolutionsSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Our <span className="text-gradient">Solutions & Services</span></h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("solutions_title")} <span className="text-gradient">& Services</span></h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Comprehensive AI and automation solutions tailored for enterprise needs
+            {t("solutions_subtitle")}
           </p>
         </div>
         

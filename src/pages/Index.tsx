@@ -9,6 +9,7 @@ import BlogSection from '@/components/BlogSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ParticleNetwork from '@/components/ParticleNetwork';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const Index = () => {
   // Change the page title
@@ -17,19 +18,21 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      <ParticleNetwork />
-      <Navbar />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <SolutionsSection />
-        <CaseStudiesSection />
-        <BlogSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="flex flex-col min-h-screen overflow-hidden">
+        <ParticleNetwork />
+        <Navbar />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <SolutionsSection />
+          <CaseStudiesSection />
+          <BlogSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 };
 

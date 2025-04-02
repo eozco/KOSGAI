@@ -1,5 +1,6 @@
 
 import { BarChart, Users, Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CaseStudy = ({ 
   title, 
@@ -41,15 +42,17 @@ const CaseStudy = ({
 };
 
 const CaseStudiesSection = () => {
+  const { t } = useLanguage();
+  
   const caseStudies = [
     {
       title: "AI-Powered Document Processing",
       company: "Global Financial Institution",
       description: "Implemented on-premise Llama model for secure document processing, reducing manual review time while maintaining data privacy compliance.",
       metrics: [
-        { icon: BarChart, label: "Efficiency", value: "87%" },
-        { icon: Users, label: "Adoption", value: "100%" },
-        { icon: Clock, label: "Time Saved", value: "65%" },
+        { icon: BarChart, label: t("efficiency"), value: "87%" },
+        { icon: Users, label: t("adoption"), value: "100%" },
+        { icon: Clock, label: t("time_saved"), value: "65%" },
       ]
     },
     {
@@ -57,9 +60,9 @@ const CaseStudiesSection = () => {
       company: "Manufacturing Enterprise",
       description: "Deployed n8n workflows with AI decision nodes to streamline operations across supply chain and inventory management processes.",
       metrics: [
-        { icon: BarChart, label: "Cost Savings", value: "42%" },
-        { icon: Users, label: "Departments", value: "5+" },
-        { icon: Clock, label: "Hours/Week", value: "120+" },
+        { icon: BarChart, label: t("cost_savings"), value: "42%" },
+        { icon: Users, label: t("departments"), value: "5+" },
+        { icon: Clock, label: t("hours_week"), value: "120+" },
       ]
     },
     {
@@ -67,19 +70,19 @@ const CaseStudiesSection = () => {
       company: "Legal Services Provider",
       description: "Implemented RAG-powered knowledge base assistant using Koboldcpp and fine-tuned Mistral model for internal legal research.",
       metrics: [
-        { icon: BarChart, label: "Accuracy", value: "94%" },
-        { icon: Users, label: "Daily Users", value: "150+" },
-        { icon: Clock, label: "Response Time", value: "<3s" },
+        { icon: BarChart, label: t("accuracy"), value: "94%" },
+        { icon: Users, label: t("daily_users"), value: "150+" },
+        { icon: Clock, label: t("response_time"), value: "<3s" },
       ]
     },
     {
       title: "Enterprise AI Training Program",
       company: "Technology Conglomerate",
-      description: "Developed custom Cursos learning paths for technical and non-technical staff, enabling organization-wide AI literacy and adoption.",
+      description: "Developed custom Capacitaciones learning paths for technical and non-technical staff, enabling organization-wide AI literacy and adoption.",
       metrics: [
-        { icon: BarChart, label: "Completion", value: "92%" },
-        { icon: Users, label: "Staff Trained", value: "1200+" },
-        { icon: Clock, label: "Training Time", value: "50h" },
+        { icon: BarChart, label: t("completion"), value: "92%" },
+        { icon: Users, label: t("staff_trained"), value: "1200+" },
+        { icon: Clock, label: t("training_time"), value: "50h" },
       ]
     }
   ];
@@ -93,9 +96,9 @@ const CaseStudiesSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Client <span className="text-gradient">Success Stories</span></h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("case_studies_title")} <span className="text-gradient">Success Stories</span></h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Real-world implementations and results from our enterprise solutions
+            {t("case_studies_subtitle")}
           </p>
         </div>
         

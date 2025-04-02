@@ -1,4 +1,3 @@
-
 interface BlogSection {
   title: string;
   paragraphs: string[];
@@ -24,7 +23,7 @@ export const blogPosts: BlogPostCollection = {
     {
       title: "Fine-tuning Llama 3 for Enterprise Use Cases",
       category: "AI Development",
-      date: "May 15, 2023",
+      date: "May 15, 2025",
       excerpt: "Learn how to fine-tune Llama 3 models for specific business domains while maintaining high performance on limited hardware resources.",
       imageColor: "bg-gradient-to-r from-ko-secondary/30 to-ko-accent/30 dark:from-ko-secondary/40 dark:to-ko-accent/40",
       slug: "fine-tuning-llama-3-enterprise",
@@ -59,7 +58,7 @@ export const blogPosts: BlogPostCollection = {
     {
       title: "Building Secure RAG Systems with Private Data",
       category: "Security",
-      date: "June 2, 2023",
+      date: "June 2, 2025",
       excerpt: "Strategies for implementing Retrieval Augmented Generation while ensuring data never leaves your secure infrastructure.",
       imageColor: "bg-gradient-to-r from-ko-primary/30 to-ko-secondary/30 dark:from-ko-primary/40 dark:to-ko-secondary/40",
       slug: "secure-rag-systems-private-data",
@@ -94,7 +93,7 @@ export const blogPosts: BlogPostCollection = {
     {
       title: "Automating Microsoft 365 Workflows with n8n and AI",
       category: "Automation",
-      date: "June 23, 2023",
+      date: "June 23, 2025",
       excerpt: "Step-by-step guide to creating powerful Microsoft 365 automation workflows enhanced with AI decision-making capabilities.",
       imageColor: "bg-gradient-to-r from-ko-accent/30 to-ko-primary/30 dark:from-ko-accent/40 dark:to-ko-primary/40",
       slug: "automating-microsoft-365-n8n-ai",
@@ -131,7 +130,7 @@ export const blogPosts: BlogPostCollection = {
     {
       title: "Ajuste fino de Llama 3 para casos de uso empresarial",
       category: "Desarrollo IA",
-      date: "15 Mayo, 2023",
+      date: "15 Mayo, 2025",
       excerpt: "Aprenda a ajustar modelos Llama 3 para dominios empresariales específicos manteniendo un alto rendimiento en recursos de hardware limitados.",
       imageColor: "bg-gradient-to-r from-ko-secondary/30 to-ko-accent/30 dark:from-ko-secondary/40 dark:to-ko-accent/40",
       slug: "ajuste-fino-llama-3-empresarial",
@@ -166,7 +165,7 @@ export const blogPosts: BlogPostCollection = {
     {
       title: "Construyendo sistemas RAG seguros con datos privados",
       category: "Seguridad",
-      date: "2 Junio, 2023",
+      date: "2 Junio, 2025",
       excerpt: "Estrategias para implementar Generación Aumentada por Recuperación asegurando que los datos nunca salgan de su infraestructura segura.",
       imageColor: "bg-gradient-to-r from-ko-primary/30 to-ko-secondary/30 dark:from-ko-primary/40 dark:to-ko-secondary/40",
       slug: "sistemas-rag-seguros-datos-privados",
@@ -201,7 +200,7 @@ export const blogPosts: BlogPostCollection = {
     {
       title: "Automatización de flujos de trabajo de Microsoft 365 con n8n e IA",
       category: "Automatización",
-      date: "23 Junio, 2023",
+      date: "23 Junio, 2025",
       excerpt: "Guía paso a paso para crear poderosos flujos de trabajo de automatización de Microsoft 365 mejorados con capacidades de toma de decisiones con IA.",
       imageColor: "bg-gradient-to-r from-ko-accent/30 to-ko-primary/30 dark:from-ko-accent/40 dark:to-ko-primary/40",
       slug: "automatizacion-microsoft-365-n8n-ia",

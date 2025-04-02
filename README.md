@@ -1,91 +1,73 @@
-# KO AI Automation Hub
+# Welcome to your Lovable project
 
-A modern web application showcasing enterprise AI and automation solutions, built with React, TypeScript, and Tailwind CSS.
+## Project info
 
-## Features
+**URL**: https://lovable.dev/projects/116ca62a-ea6b-4a4f-acb6-993b6212cd85
 
-- 🌐 Bilingual support (English/Spanish)
-- 🎨 Modern UI with Tailwind CSS and Headless UI
-- 📱 Fully responsive design
-- 🚀 Built with Vite for fast development
-- 🔒 Secure contact form
-- 📝 Blog section
-- 📊 Case studies showcase
-- 🎓 Training programs section
+## How can I edit this code?
 
-## Tech Stack
+There are several ways of editing your application.
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Headless UI
-- React Router
-- React Hook Form
-- Zod
-- Lucide Icons
+**Use Lovable**
 
-## Getting Started
+Simply visit the [Lovable Project](https://lovable.dev/projects/116ca62a-ea6b-4a4f-acb6-993b6212cd85) and start prompting.
 
-### Prerequisites
+Changes made via Lovable will be committed automatically to this repo.
 
-- Node.js (v16 or higher)
-- npm (v7 or higher)
+**Use your preferred IDE**
 
-### Installation
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/ko-ai-automation-hub.git
-cd ko-ai-automation-hub
-```
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-2. Install dependencies:
-```bash
-npm install
-```
+Follow these steps:
 
-3. Start the development server:
-```bash
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-4. Open [http://localhost:8080](http://localhost:8080) in your browser.
+**Edit a file directly in GitHub**
 
-### Building for Production
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```bash
-npm run build
-```
+**Use GitHub Codespaces**
 
-The built files will be in the `dist` directory.
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## Project Structure
+## What technologies are used for this project?
 
-```
-src/
-├── components/     # React components
-├── contexts/      # React contexts
-├── pages/         # Page components
-├── services/      # API and service functions
-├── styles/        # Global styles
-└── types/         # TypeScript type definitions
-```
+This project is built with:
 
-## Contributing
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## How can I deploy this project?
 
-## License
+Simply open [Lovable](https://lovable.dev/projects/116ca62a-ea6b-4a4f-acb6-993b6212cd85) and click on Share -> Publish.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Can I connect a custom domain to my Lovable project?
 
-## Contact
+Yes it is!
 
-- Email: info@kosolucionesgenerales.com
-- Phone: +52 331 319 5542
-- Location: Guadalajara, México
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)

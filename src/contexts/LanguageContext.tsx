@@ -56,6 +56,8 @@ const translations = {
     "onprem_ai_desc": "Deploy AI models within your secure infrastructure for complete data control.",
     "automation_title": "Enterprise Automation with n8n",
     "automation_desc": "Connect AI capabilities with your business operations through intelligent workflows.",
+    "training_title": "Training & Upskilling",
+    "training_desc": "Empower your teams with the knowledge to leverage AI and automation.",
     "infrastructure_title": "Secure IT Infrastructure & Local AI",
     "infrastructure_desc": "Build robust foundations for your AI and automation initiatives.",
     
@@ -121,6 +123,7 @@ const translations = {
     "contact_info": "Contact Information",
     "email_us": "Email Us",
     "call_us": "Call Us",
+    "location": "Location",
     "join_community": "Join our community",
     "newsletter_desc": "Subscribe to our newsletter for the latest updates on AI, automation, and training opportunities.",
     "subscribe": "Subscribe",
@@ -139,6 +142,7 @@ const translations = {
     // Training
     "training_title": "Training & Upskilling",
     "training_desc": "Empower your teams with the knowledge to leverage AI and automation.",
+    "training_section_title": "Training & Upskilling",
     "training_section_subtitle": "Comprehensive training programs to develop expertise in AI and automation within your organization",
     "training_program_1": "Private AI Masterclass",
     "training_program_2": "RAG System Implementation",
@@ -216,6 +220,8 @@ const translations = {
     "onprem_ai_desc": "Implemente modelos de IA dentro de su infraestructura segura para un control total de datos.",
     "automation_title": "Automatización Empresarial con n8n",
     "automation_desc": "Conecte las capacidades de IA con sus operaciones comerciales mediante flujos de trabajo inteligentes.",
+    "training_title": "Training & Upskilling",
+    "training_desc": "Empower your teams with the knowledge to leverage AI and automation.",
     "infrastructure_title": "Infraestructura de TI Segura e IA Local",
     "infrastructure_desc": "Construya bases robustas para sus iniciativas de IA y automatización.",
     
@@ -281,6 +287,7 @@ const translations = {
     "contact_info": "Información de Contacto",
     "email_us": "Envíenos un Correo",
     "call_us": "Llámenos",
+    "location": "Ubicación",
     "join_community": "Únase a nuestra comunidad",
     "newsletter_desc": "Suscríbase a nuestro boletín para recibir las últimas actualizaciones sobre IA, automatización y oportunidades de capacitación.",
     "subscribe": "Suscribirse",
@@ -299,6 +306,7 @@ const translations = {
     // Training
     "training_title": "Capacitaciones: Formación en IA Empresarial",
     "training_desc": "Capacite a sus equipos con el conocimiento para aprovechar la IA y la automatización.",
+    "training_section_title": "Capacitaciones: Formación en IA Empresarial",
     "training_section_subtitle": "Programas de formación integrales para desarrollar experiencia en IA y automatización en su organización",
     "training_program_1": "Masterclass de IA Privada",
     "training_program_2": "Implementación de Sistemas RAG",

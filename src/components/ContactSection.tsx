@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, PhoneCall } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -138,11 +138,21 @@ const ContactSection = () => {
               
               <div className="flex items-start">
                 <div className="mr-4 p-2 rounded-full bg-ko-accent/20 dark:bg-ko-accent/30 text-ko-accent">
-                  <PhoneCall className="w-5 h-5" />
+                  <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-semibold">{t("call_us")}</h4>
                   <p className="text-gray-600 dark:text-gray-400">+52 331 319 5542</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="mr-4 p-2 rounded-full bg-ko-primary/20 dark:bg-ko-primary/30 text-ko-primary">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-semibold">{t("location")}</h4>
+                  <p className="text-gray-600 dark:text-gray-400">Guadalajara, México</p>
                 </div>
               </div>
             </div>

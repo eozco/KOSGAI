@@ -1,10 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import * as path from "path";
 
-export default defineConfig({
+// https://vitejs.dev/config/
+export default defineConfig(() => ({
+  base: "/",
   server: {
-    host: true,
+    host: "0.0.0.0", // "::" podría causar problemas en algunos entornos
     port: 8080,
   },
   plugins: [react()],
@@ -17,8 +19,9 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: true,
     rollupOptions: {
-      input: path.resolve(__dirname, "index.html"),
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+      },
     },
   },
-});
-});
+}));

@@ -24,9 +24,7 @@ export default defineConfig(({ mode }) => ({
     sourcemap: true,
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-      },
+      input: path.resolve(__dirname, 'index.html'),
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
@@ -37,5 +35,5 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  base: './',
+  base: '/KOSGAI/',
 }));

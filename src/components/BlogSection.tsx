@@ -60,7 +60,7 @@ const BlogSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("blog_title")} <span className="text-gradient">Insights Hub</span></h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("blog_title")}</h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             {t("blog_subtitle")}
           </p>

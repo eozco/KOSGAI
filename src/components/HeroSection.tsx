@@ -56,7 +56,7 @@ const HeroSection = () => {
 
         {/* Main heading with gradient effect */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          {t("hero_title")} <span className="text-gradient">& Automation</span> <br className="hidden sm:block" />
+          {t("hero_title")} <br className="hidden sm:block" />
           for the Future
         </h1>
         
@@ -125,8 +125,8 @@ const HeroSection = () => {
         {/* AI Model Visualization */}
         <div className="mt-16 relative">
           <div className="glassmorphism rounded-xl p-4 md:p-8 max-w-4xl mx-auto overflow-hidden">
-            <h3 className="text-xl font-semibold mb-2">Real-time AI Models</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">See our on-premise AI solutions in action</p>
+            <h3 className="text-xl font-semibold mb-2">{t("realtime_ai_models")}</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">{t("realtime_ai_models_desc")}</p>
             
             <div className="flex flex-wrap gap-4 justify-center">
               {["Llama 3", "DeepSeek", "Mistral", "Koboldcpp"].map((model) => (

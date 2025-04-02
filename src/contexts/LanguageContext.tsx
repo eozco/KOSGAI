@@ -79,6 +79,10 @@ const translations = {
     "feature_encryption": "End-to-end data encryption & security protocols",
     "feature_architecture": "Privacy-first architecture design & implementation",
     
+    // Real-time AI Models section
+    "realtime_ai_models": "Real-time AI Models",
+    "realtime_ai_models_desc": "See our on-premise AI solutions in action",
+    
     // Case Studies
     "case_studies_title": "Client Success Stories",
     "case_studies_subtitle": "Real-world implementations and results from our enterprise solutions",
@@ -222,6 +226,10 @@ const translations = {
     "feature_docker": "Orquestación Docker y Kubernetes para escalar",
     "feature_encryption": "Protocolos de cifrado y seguridad de extremo a extremo",
     "feature_architecture": "Diseño e implementación de arquitectura centrada en la privacidad",
+    
+    // Real-time AI Models section
+    "realtime_ai_models": "Modelos de IA en Tiempo Real",
+    "realtime_ai_models_desc": "Vea nuestras soluciones de IA locales en acción",
     
     // Case Studies
     "case_studies_title": "Casos de Éxito de Clientes",

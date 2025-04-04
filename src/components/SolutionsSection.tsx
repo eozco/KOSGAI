@@ -1,98 +1,120 @@
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Server, Workflow, Database, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Shield, Zap, Server, Lock } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
-const SolutionsSection = () => {
+export function SolutionsSection() {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const solutions = [
     {
-      icon: <Server className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
-      title: t("solutions.onprem_ai.title"),
-      description: t("solutions.onprem_ai.desc"),
-      features: t("solutions.onprem_ai.features").split('\n'),
-      gradient: "from-violet-600/20 via-purple-600/20 to-indigo-600/20",
-      buttonText: t("solutions.learn_more")
+      icon: Server,
+      title: t("onprem_ai_title"),
+      description: t("onprem_ai_desc"),
+      features: [
+        t("feature_private_ai"),
+        t("feature_secure_chatbots"),
+        t("feature_rag"),
+        t("feature_doc_analysis")
+      ],
+      gradient: "from-violet-500 via-purple-500 to-indigo-500",
+      buttonText: t("request_demo")
     },
     {
-      icon: <Workflow className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
-      title: t("solutions.automation.title"),
-      description: t("solutions.automation.desc"),
-      features: t("solutions.automation.features").split('\n'),
-      gradient: "from-purple-600/20 via-pink-600/20 to-rose-600/20",
-      buttonText: t("solutions.explore_automation")
+      icon: Zap,
+      title: t("automation_title"),
+      description: t("automation_desc"),
+      features: [
+        t("feature_ai_workflows"),
+        t("feature_microsoft"),
+        t("feature_pipelines"),
+        t("feature_custom_workflows")
+      ],
+      gradient: "from-blue-500 via-purple-500 to-pink-500",
+      buttonText: t("request_demo")
     },
     {
-      icon: <Database className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
-      title: t("solutions.infrastructure.title"),
-      description: t("solutions.infrastructure.desc"),
-      features: t("solutions.infrastructure.features").split('\n'),
-      gradient: "from-indigo-600/20 via-violet-600/20 to-purple-600/20",
-      buttonText: t("solutions.contact_us")
+      icon: Shield,
+      title: t("infrastructure_title"),
+      description: t("infrastructure_desc"),
+      features: [
+        t("feature_hosting"),
+        t("feature_docker"),
+        t("feature_encryption"),
+        t("feature_architecture")
+      ],
+      gradient: "from-indigo-500 via-purple-500 to-pink-500",
+      buttonText: t("request_demo")
     }
   ];
 
+  const handleDemoRequest = () => {
+    navigate("/contact");
+  };
+
   return (
-    <section id="solutions" className="relative py-20 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-purple-50/30 to-indigo-50/20 dark:from-gray-900 dark:via-purple-900/20 dark:to-indigo-900/10" />
-      <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-indigo-400/10 dark:bg-indigo-500/10 rounded-full filter blur-3xl animate-pulse" />
+    <section id="solutions" className="relative overflow-hidden bg-background py-20 dark:bg-gray-900">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-violet-500/30 to-purple-500/30 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-blue-500/30 to-indigo-500/30 blur-3xl" />
+      </div>
 
-      <div className="relative container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            {t("solutions.title")}
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="text-center">
+          <h2 className="mb-6 text-4xl font-bold tracking-tight">
+            <span className="bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+              {t("solutions_title")}
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            {t("solutions.subtitle")}
+          
+          <p className="mx-auto mb-16 max-w-2xl text-lg text-muted-foreground">
+            {t("solutions_subtitle")}
           </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {solutions.map((solution, index) => (
-            <div
-              key={index}
-              className="group relative bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300"
-            >
-              <div className={`p-8 relative overflow-hidden bg-gradient-to-br ${solution.gradient} dark:opacity-30`}>
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-indigo-500/10 dark:from-violet-400/20 dark:via-purple-400/20 dark:to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="mb-4 p-3 rounded-xl bg-white/70 dark:bg-black/30 backdrop-blur-xl shadow-lg shadow-purple-500/5 group-hover:shadow-purple-500/20 transition-shadow duration-300 inline-block">
-                    {solution.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
-                    {solution.title}
-                  </h3>
-                  <p className="mt-3 text-gray-600 dark:text-gray-300">
-                    {solution.description}
-                  </p>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map((solution, index) => (
+              <div
+                key={index}
+                className="group relative rounded-xl border border-gray-200 bg-white/50 p-6 backdrop-blur-lg transition-all hover:border-purple-500 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900/50"
+              >
+                <div className={`mb-4 inline-flex rounded-lg bg-gradient-to-r ${solution.gradient} p-3 text-white`}>
+                  <solution.icon className="h-6 w-6" />
                 </div>
-              </div>
+                
+                <h3 className="mb-2 text-xl font-semibold text-foreground dark:text-gray-200">
+                  {solution.title}
+                </h3>
+                
+                <p className="mb-6 text-muted-foreground">
+                  {solution.description}
+                </p>
 
-              <div className="p-8">
-                <ul className="space-y-3 mb-8">
-                  {solution.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-700 dark:text-gray-300 group/item">
-                      <span className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full mr-3 group-hover/item:scale-125 transition-transform duration-300"></span>
+                <ul className="mb-6 space-y-2">
+                  {solution.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center text-sm text-muted-foreground transition-transform hover:translate-x-2"
+                    >
+                      <div className={`mr-2 h-1.5 w-1.5 rounded-full bg-gradient-to-r ${solution.gradient}`} />
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                <Button 
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all duration-300"
+                <button
+                  onClick={handleDemoRequest}
+                  className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500 p-0.5 font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 group-hover:from-purple-500 group-hover:to-indigo-500 dark:text-white dark:focus:ring-purple-800"
                 >
-                  {solution.buttonText}
-                </Button>
+                  <span className="relative w-full rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+                    {solution.buttonText}
+                  </span>
+                </button>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default SolutionsSection;
+}

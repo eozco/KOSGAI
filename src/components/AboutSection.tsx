@@ -1,103 +1,125 @@
-import { useLanguage } from "@/contexts/LanguageContext";
 import { Shield, Zap, Server, Lock } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
-const AboutSection = () => {
+export function AboutSection() {
   const { t } = useLanguage();
 
   const features = [
     {
-      icon: <Lock className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
-      title: t("about.private_secure"),
-      description: t("about.private_secure_desc"),
-      gradient: "from-violet-600/20 via-purple-600/20 to-indigo-600/20"
+      icon: Shield,
+      title: t("private_secure"),
+      description: t("private_secure_desc"),
+      gradient: "from-violet-500 via-purple-500 to-indigo-500"
     },
     {
-      icon: <Server className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
-      title: t("about.local_deployment"),
-      description: t("about.local_deployment_desc"),
-      gradient: "from-purple-600/20 via-pink-600/20 to-rose-600/20"
+      icon: Zap,
+      title: t("powerful_accessible"),
+      description: t("powerful_accessible_desc"),
+      gradient: "from-blue-500 via-purple-500 to-pink-500"
     },
     {
-      icon: <Zap className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
-      title: t("about.enterprise_ready"),
-      description: t("about.enterprise_ready_desc"),
-      gradient: "from-indigo-600/20 via-violet-600/20 to-purple-600/20"
+      icon: Server,
+      title: t("integrated_automated"),
+      description: t("integrated_automated_desc"),
+      gradient: "from-indigo-500 via-purple-500 to-pink-500"
+    }
+  ];
+
+  const techStacks = [
+    {
+      title: t("ai_models"),
+      list: t("ai_models_list").split("\n"),
+      gradient: "from-violet-500 via-purple-500 to-indigo-500"
     },
     {
-      icon: <Shield className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
-      title: t("about.compliance_security"),
-      description: t("about.compliance_security_desc"),
-      gradient: "from-blue-600/20 via-indigo-600/20 to-violet-600/20"
+      title: t("local_ai"),
+      list: t("local_ai_list").split("\n"),
+      gradient: "from-blue-500 via-purple-500 to-pink-500"
+    },
+    {
+      title: t("automation_stack"),
+      list: t("automation_list").split("\n"),
+      gradient: "from-indigo-500 via-purple-500 to-pink-500"
+    },
+    {
+      title: t("security_stack"),
+      list: t("security_list").split("\n"),
+      gradient: "from-pink-500 via-purple-500 to-violet-500"
     }
   ];
 
   return (
-    <section id="about" className="relative py-20 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-purple-50/30 to-indigo-50/20 dark:from-gray-900 dark:via-purple-900/20 dark:to-indigo-900/10" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-400/10 dark:bg-indigo-500/10 rounded-full filter blur-3xl animate-pulse" />
+    <section id="about" className="relative overflow-hidden bg-background py-20 dark:bg-gray-900">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 right-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-violet-500/30 to-purple-500/30 blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-blue-500/30 to-indigo-500/30 blur-3xl" />
+      </div>
 
-      <div className="relative container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            {t("about.title")}
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="text-center">
+          <h2 className="mb-6 text-4xl font-bold tracking-tight">
+            <span className="bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+              {t("about_title")}
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            {t("about.company_desc")}
+          
+          <p className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground">
+            {t("company_desc")}
           </p>
-          <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-            {t("about.mission")}
+
+          <h3 className="mb-4 text-2xl font-semibold text-foreground dark:text-gray-200">
+            {t("our_mission")}
           </h3>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            {t("about.mission_statement")}
+          
+          <p className="mx-auto mb-12 max-w-2xl text-muted-foreground">
+            {t("mission_statement")}
           </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300"
-            >
-              <div className={`p-8 relative overflow-hidden bg-gradient-to-br ${feature.gradient} dark:opacity-30`}>
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-indigo-500/10 dark:from-violet-400/20 dark:via-purple-400/20 dark:to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="mb-4 p-3 rounded-xl bg-white/70 dark:bg-black/30 backdrop-blur-xl shadow-lg shadow-purple-500/5 group-hover:shadow-purple-500/20 transition-shadow duration-300 inline-block">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-gray-600 dark:text-gray-300">
-                    {feature.description}
-                  </p>
+          <div className="mb-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="group relative rounded-xl border border-gray-200 bg-white/50 p-6 backdrop-blur-lg transition-all hover:border-purple-500 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900/50"
+              >
+                <div className={`mb-4 inline-flex rounded-lg bg-gradient-to-r ${feature.gradient} p-3 text-white`}>
+                  <feature.icon className="h-6 w-6" />
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 max-w-4xl mx-auto">
-          <div className="group relative bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
-            <div className="p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-purple-600/20 to-indigo-600/20 dark:from-violet-500/30 dark:via-purple-500/30 dark:to-indigo-500/30" />
-              <div className="relative">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                  {t("about.local_ai")}
+                <h3 className="mb-2 text-xl font-semibold text-foreground dark:text-gray-200">
+                  {feature.title}
                 </h3>
-                <div className="prose prose-lg dark:prose-invert">
-                  <pre className="whitespace-pre-line text-gray-600 dark:text-gray-300 font-mono bg-gray-50/50 dark:bg-gray-900/50 rounded-xl p-6">
-                    {t("about.local_ai_list")}
-                  </pre>
-                </div>
+                <p className="text-muted-foreground">
+                  {feature.description}
+                </p>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <h3 className="mb-8 text-2xl font-semibold text-foreground dark:text-gray-200">
+            {t("tech_stack")}
+          </h3>
+
+          <div className="grid gap-8 sm:grid-cols-2">
+            {techStacks.map((stack, index) => (
+              <div
+                key={index}
+                className="group relative rounded-xl border border-gray-200 bg-white/50 p-6 backdrop-blur-lg transition-all hover:border-purple-500 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900/50"
+              >
+                <h4 className={`mb-4 bg-gradient-to-r ${stack.gradient} bg-clip-text text-xl font-semibold text-transparent`}>
+                  {stack.title}
+                </h4>
+                <ul className="list-inside list-disc space-y-2 text-muted-foreground">
+                  {stack.list.map((item, i) => (
+                    <li key={i} className="transition-transform hover:translate-x-2">
+                      {item.replace("• ", "")}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default AboutSection;
+}

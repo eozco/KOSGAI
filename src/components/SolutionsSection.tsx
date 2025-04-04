@@ -8,27 +8,27 @@ const SolutionsSection = () => {
   const solutions = [
     {
       icon: <Server className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
-      title: t("onprem_ai_title"),
-      description: t("onprem_ai_desc"),
-      features: t("onprem_ai_features").split('\n'),
+      title: t("solutions.onprem_ai.title"),
+      description: t("solutions.onprem_ai.desc"),
+      features: t("solutions.onprem_ai.features").split('\n'),
       gradient: "from-violet-600/20 via-purple-600/20 to-indigo-600/20",
-      buttonText: t("learn_more")
+      buttonText: t("solutions.learn_more")
     },
     {
       icon: <Workflow className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
-      title: t("automation_title"),
-      description: t("automation_desc"),
-      features: t("automation_features").split('\n'),
+      title: t("solutions.automation.title"),
+      description: t("solutions.automation.desc"),
+      features: t("solutions.automation.features").split('\n'),
       gradient: "from-purple-600/20 via-pink-600/20 to-rose-600/20",
-      buttonText: t("explore_automation")
+      buttonText: t("solutions.explore_automation")
     },
     {
       icon: <Database className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
-      title: t("infrastructure_title"),
-      description: t("infrastructure_desc"),
-      features: t("infrastructure_features").split('\n'),
+      title: t("solutions.infrastructure.title"),
+      description: t("solutions.infrastructure.desc"),
+      features: t("solutions.infrastructure.features").split('\n'),
       gradient: "from-indigo-600/20 via-violet-600/20 to-purple-600/20",
-      buttonText: t("contact_us")
+      buttonText: t("solutions.contact_us")
     }
   ];
 
@@ -42,10 +42,10 @@ const SolutionsSection = () => {
       <div className="relative container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            {t("solutions_title")}
+            {t("solutions.title")}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            {t("solutions_subtitle")}
+            {t("solutions.subtitle")}
           </p>
         </div>
 

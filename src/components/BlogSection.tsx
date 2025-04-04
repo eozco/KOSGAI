@@ -1,4 +1,4 @@
-import { CalendarClock } from "lucide-react";
+import { CalendarClock, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -43,7 +43,7 @@ const BlogPost = ({
           to={`/blog/${slug}`} 
           className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
         >
-          {t("read_more")} 
+          {t("blog.read_more")} 
           <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
@@ -58,45 +58,85 @@ const BlogSection = () => {
   const currentPosts = blogPosts[language];
 
   return (
-    <section id="blog" className="py-20 relative overflow-hidden">
+    <section id="blog" className="py-20 relative overflow-hidden bg-gray-900">
       {/* Background accents */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/3 left-1/3 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-indigo-500/10 rounded-full filter blur-3xl animate-pulse"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            {t("blog_title")}
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+            {t("blog.title")}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t("blog_subtitle")}
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            {t("blog.subtitle")}
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {currentPosts.slice(0, 3).map((post, index) => (
-            <BlogPost
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {blogPosts.map((post, index) => (
+            <div 
               key={index}
-              title={post.title}
-              category={post.category}
-              excerpt={post.excerpt}
-              date={post.date}
-              imageColor={post.imageColor}
-              slug={post.slug}
-            />
+              className="group bg-gray-800/50 backdrop-blur-xl rounded-2xl border border-purple-900/50 hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 overflow-hidden"
+            >
+              <div className="relative h-48">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-sm">
+                    {post.category}
+                  </span>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center text-sm text-gray-400 mb-4">
+                  <CalendarClock className="w-4 h-4 mr-2" />
+                  {post.date}
+                </div>
+                
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors duration-300">
+                  {post.title}
+                </h3>
+                
+                <p className="text-gray-400 mb-6">
+                  {post.excerpt}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <img 
+                      src={post.author.avatar} 
+                      alt={post.author.name}
+                      className="w-8 h-8 rounded-full mr-3"
+                    />
+                    <span className="text-sm text-gray-300">{post.author.name}</span>
+                  </div>
+                  
+                  <Button 
+                    variant="ghost" 
+                    className="text-purple-400 hover:text-purple-300 hover:bg-purple-900/30"
+                  >
+                    {t("blog.read_more")}
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
+        
+        <div className="text-center mt-12">
           <Button 
-            asChild 
-            variant="outline" 
-            size="lg"
-            className="border-2 border-purple-500/50 dark:border-purple-400/50 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300"
+            className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all duration-300"
           >
-            <Link to="/blog">{t("view_all_posts")}</Link>
+            {t("blog.view_all_posts")}
           </Button>
         </div>
       </div>

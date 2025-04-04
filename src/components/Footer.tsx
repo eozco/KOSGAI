@@ -7,86 +7,166 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-100/50 dark:bg-gray-900/50 pt-16 pb-6 border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="relative overflow-hidden bg-gray-900">
+      {/* Background accents */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/3 left-1/3 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-indigo-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
           <div>
-            <h3 className="font-bold text-lg mb-4">Inbloqs</h3>
-            <ul className="space-y-2">
-              <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("about_us")}</a></li>
-              <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("contact")}</a></li>
-            </ul>
+            <img 
+              src="/logo-inbloqs.png" 
+              alt="Inbloqs" 
+              className="h-8 w-auto mb-6 dark:invert dark:brightness-200"
+            />
+            <p className="text-gray-400 mb-6">
+              {t("footer.description")}
+            </p>
+            <div className="flex space-x-4">
+              <a 
+                href="https://twitter.com/inbloqs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://linkedin.com/company/inbloqs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://github.com/inbloqs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+            </div>
           </div>
           
           <div>
-            <h3 className="font-bold text-lg mb-4">{t("solutions")}</h3>
-            <ul className="space-y-2">
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("on_premise_ai")}</a></li>
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("enterprise_automation")}</a></li>
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("capacitaciones")}</a></li>
-              <li><a href="#solutions" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("it_infrastructure")}</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-bold text-lg mb-4">{t("resources")}</h3>
-            <ul className="space-y-2">
-              <li><a href="#blog" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("blog")}</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("whitepapers")}</a></li>
-              <li><a href="#case-studies" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("case_studies")}</a></li>
-              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("documentation")}</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-bold text-lg mb-4">{t("contact_info")}</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center text-gray-600 dark:text-gray-400">
-                <Mail className="w-4 h-4 mr-2" />
-                <a href="mailto:info@inbloqs.com" className="hover:text-inbloqs-secondary transition-colors">
-                  info@inbloqs.com
+            <h3 className="text-lg font-semibold text-white mb-6">{t("footer.company")}</h3>
+            <ul className="space-y-4">
+              <li>
+                <a 
+                  href="#about" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.about_us")}
                 </a>
               </li>
-              <li className="flex items-center text-gray-600 dark:text-gray-400">
-                <Phone className="w-4 h-4 mr-2" />
-                <a href="tel:+523313195542" className="hover:text-ko-secondary transition-colors">
-                  +52 331 319 5542
+              <li>
+                <a 
+                  href="#solutions" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.solutions")}
                 </a>
               </li>
-              <li className="flex items-center text-gray-600 dark:text-gray-400">
-                <MapPin className="w-4 h-4 mr-2" />
-                Guadalajara, México
+              <li>
+                <a 
+                  href="#case-studies" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.case_studies")}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#blog" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.blog")}
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6">{t("footer.services")}</h3>
+            <ul className="space-y-4">
+              <li>
+                <a 
+                  href="#solutions" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.on_premise_ai")}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#solutions" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.enterprise_automation")}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#training" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.training")}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#solutions" 
+                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                >
+                  {t("footer.secure_infrastructure")}
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6">{t("footer.contact")}</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <Mail className="w-5 h-5 text-purple-400 mr-3 mt-1" />
+                <span className="text-gray-400">info@inbloqs.com</span>
+              </li>
+              <li className="flex items-start">
+                <Phone className="w-5 h-5 text-purple-400 mr-3 mt-1" />
+                <span className="text-gray-400">+52 331 319 5542</span>
+              </li>
+              <li className="flex items-start">
+                <MapPin className="w-5 h-5 text-purple-400 mr-3 mt-1" />
+                <span className="text-gray-400">Guadalajara, México</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex items-center mb-4 md:mb-0">
-            <Logo />
-          </div>
-          
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Facebook className="w-5 h-5" />
-              <span className="sr-only">Facebook</span>
-            </a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Twitter className="w-5 h-5" />
-              <span className="sr-only">Twitter</span>
-            </a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Linkedin className="w-5 h-5" />
-              <span className="sr-only">LinkedIn</span>
-            </a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Github className="w-5 h-5" />
-              <span className="sr-only">GitHub</span>
-            </a>
-          </div>
-          
-          <div className="text-sm text-gray-600 dark:text-gray-400">
-            &copy; {currentYear} KO Soluciones Generales. {t("rights_reserved")}
+        <div className="border-t border-purple-900/50 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Inbloqs. {t("footer.rights_reserved")}
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300"
+              >
+                {t("footer.privacy_policy")}
+              </a>
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300"
+              >
+                {t("footer.terms_of_service")}
+              </a>
+            </div>
           </div>
         </div>
       </div>

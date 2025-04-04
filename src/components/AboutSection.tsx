@@ -7,26 +7,26 @@ const AboutSection = () => {
   const features = [
     {
       icon: <Lock className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
-      title: t("private_secure"),
-      description: t("private_secure_desc"),
+      title: t("about.private_secure"),
+      description: t("about.private_secure_desc"),
       gradient: "from-violet-600/20 via-purple-600/20 to-indigo-600/20"
     },
     {
       icon: <Server className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
-      title: t("local_deployment"),
-      description: t("local_deployment_desc"),
+      title: t("about.local_deployment"),
+      description: t("about.local_deployment_desc"),
       gradient: "from-purple-600/20 via-pink-600/20 to-rose-600/20"
     },
     {
       icon: <Zap className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
-      title: t("enterprise_ready"),
-      description: t("enterprise_ready_desc"),
+      title: t("about.enterprise_ready"),
+      description: t("about.enterprise_ready_desc"),
       gradient: "from-indigo-600/20 via-violet-600/20 to-purple-600/20"
     },
     {
       icon: <Shield className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
-      title: t("compliance_security"),
-      description: t("compliance_security_desc"),
+      title: t("about.compliance_security"),
+      description: t("about.compliance_security_desc"),
       gradient: "from-blue-600/20 via-indigo-600/20 to-violet-600/20"
     }
   ];
@@ -41,16 +41,16 @@ const AboutSection = () => {
       <div className="relative container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            {t("about_title")}
+            {t("about.title")}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            {t("company_desc")}
+            {t("about.company_desc")}
           </p>
           <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-            {t("our_mission")}
+            {t("about.mission")}
           </h3>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            {t("mission_statement")}
+            {t("about.mission_statement")}
           </p>
         </div>
 
@@ -84,11 +84,11 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-purple-600/20 to-indigo-600/20 dark:from-violet-500/30 dark:via-purple-500/30 dark:to-indigo-500/30" />
               <div className="relative">
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                  {t("local_ai_title")}
+                  {t("about.local_ai")}
                 </h3>
                 <div className="prose prose-lg dark:prose-invert">
                   <pre className="whitespace-pre-line text-gray-600 dark:text-gray-300 font-mono bg-gray-50/50 dark:bg-gray-900/50 rounded-xl p-6">
-                    {t("local_ai_list")}
+                    {t("about.local_ai_list")}
                   </pre>
                 </div>
               </div>

@@ -42,10 +42,11 @@ const TrainingSection = () => {
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-purple-50/50 to-indigo-50/30 dark:from-gray-900 dark:via-purple-900/20 dark:to-indigo-900/10" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full filter blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-400/10 dark:bg-indigo-500/10 rounded-full filter blur-3xl" />
+      {/* Background accents */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+      </div>
       
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-16">

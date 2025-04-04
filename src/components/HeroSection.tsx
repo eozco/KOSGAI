@@ -1,26 +1,23 @@
-import { ArrowRight, Server, Shield, Zap, Lock } from "lucide-react";
+import { ArrowRight, Server, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
-import { ParticleNetwork } from "./ParticleNetwork";
+import ParticleNetwork from "./ParticleNetwork";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const { t } = useLanguage();
-  const navigate = useNavigate();
   const [demoRequested, setDemoRequested] = useState(false);
 
-  const handleScrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const handleDemoRequest = () => {
-    navigate("/contact");
-    toast.success("Redirecting to contact form...");
+  const handleDeployAIClick = () => {
+    // Scroll to solutions section
+    document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" });
+    toast({
+      title: "AI Deployment Info",
+      description: "Contact us to learn more about deploying AI locally in your organization.",
+    });
   };
 
   const handleExploreAutomationClick = () => {
@@ -43,87 +40,108 @@ const HeroSection = () => {
 
   const features = [
     {
-      icon: Shield,
+      icon: <Shield className="w-6 h-6 text-violet-600 dark:text-violet-400" />,
       title: t("private_secure"),
-      description: t("private_secure_desc"),
-      gradient: "from-violet-500 via-purple-500 to-indigo-500"
+      description: t("private_secure_desc")
     },
     {
-      icon: Zap,
+      icon: <Zap className="w-6 h-6 text-purple-600 dark:text-purple-400" />,
       title: t("powerful_accessible"),
-      description: t("powerful_accessible_desc"),
-      gradient: "from-blue-500 via-purple-500 to-pink-500"
+      description: t("powerful_accessible_desc")
     },
     {
-      icon: Server,
+      icon: <Server className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />,
       title: t("integrated_automated"),
-      description: t("integrated_automated_desc"),
-      gradient: "from-indigo-500 via-purple-500 to-pink-500"
+      description: t("integrated_automated_desc")
     }
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background py-20 dark:bg-gray-900">
-      <ParticleNetwork className="absolute inset-0 z-0" />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-purple-50/30 to-indigo-50/20 dark:from-gray-900 dark:via-purple-900/20 dark:to-indigo-900/10" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo-400/10 dark:bg-indigo-500/10 rounded-full filter blur-3xl animate-pulse" />
       
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-violet-500/30 to-purple-500/30 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-gradient-to-r from-blue-500/30 to-indigo-500/30 blur-3xl" />
+      {/* Particle network background */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-40">
+        <ParticleNetwork />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4">
-        <div className="text-center">
-          <h1 className="mb-6 text-5xl font-bold tracking-tight">
-            <span className="bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-              {t("hero_title")}
-            </span>
-            <br />
-            <span className="mt-2 block text-4xl text-foreground dark:text-gray-200">
-              {t("hero_subtitle")}
-            </span>
-          </h1>
+      <div className="relative container mx-auto px-4 py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent"
+          >
+            {t("hero_title")}
+          </motion.h1>
           
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-2xl md:text-3xl font-semibold mb-8 text-gray-800 dark:text-gray-200"
+          >
+            {t("hero_subtitle")}
+          </motion.p>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
+          >
             {t("hero_description")}
-          </p>
+          </motion.p>
 
-          <div className="mb-16 flex justify-center gap-4">
-            <button
-              onClick={handleDemoRequest}
-              className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500 p-0.5 font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 group-hover:from-purple-500 group-hover:to-indigo-500 dark:text-white dark:focus:ring-purple-800"
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          >
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all duration-300"
             >
-              <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-                {t("request_demo")}
-              </span>
-            </button>
-            
-            <button
-              onClick={() => handleScrollToSection("solutions")}
-              className="rounded-lg border border-purple-500 px-5 py-2.5 text-purple-500 transition-all hover:bg-purple-500 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-400 dark:hover:text-gray-900"
+              {t("deploy_ai")}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-purple-500/50 dark:border-purple-400/50 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300"
             >
               {t("explore_automation")}
-            </button>
-          </div>
+            </Button>
+          </motion.div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          >
             {features.map((feature, index) => (
-              <div
+              <div 
                 key={index}
-                className="group relative rounded-xl border border-gray-200 bg-white/50 p-6 backdrop-blur-lg transition-all hover:border-purple-500 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900/50"
+                className="group relative bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl p-6 rounded-2xl border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300"
               >
-                <div className={`mb-4 inline-flex rounded-lg bg-gradient-to-r ${feature.gradient} p-3 text-white`}>
-                  <feature.icon className="h-6 w-6" />
+                <div className="mb-4 p-3 rounded-xl bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 dark:from-violet-900/30 dark:via-purple-900/30 dark:to-indigo-900/30 w-fit">
+                  {feature.icon}
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-foreground dark:text-gray-200">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-gray-600 dark:text-gray-400">
                   {feature.description}
                 </p>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

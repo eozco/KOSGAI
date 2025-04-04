@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
@@ -12,7 +11,7 @@ const Blog = () => {
   const { t, language } = useLanguage();
   
   useEffect(() => {
-    document.title = "Blog | KO Soluciones Generales";
+    document.title = "Blog | Inbloqs";
     window.scrollTo(0, 0);
   }, []);
 

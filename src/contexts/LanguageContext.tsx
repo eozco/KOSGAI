@@ -29,10 +29,10 @@ const translations = {
     "join_cursos": "Join Cursos learning platform",
     
     // About Section
-    "about_title": "About KO Soluciones Generales",
+    "about_title": "About Inbloqs",
     "company_desc": "Empowering businesses with private AI, automation, and secure on-premise solutions.",
     "our_mission": "Our Mission",
-    "mission_statement": "At KO Soluciones Generales, we're committed to democratizing AI and automation technologies for enterprises of all sizes. We believe that AI should be:",
+    "mission_statement": "At Inbloqs, we're committed to democratizing AI and automation technologies for enterprises of all sizes. We believe that AI should be:",
     "private_secure": "Private & Secure",
     "private_secure_desc": "Your data stays within your infrastructure, never leaving your control.",
     "powerful_accessible": "Powerful & Accessible",
@@ -142,14 +142,54 @@ const translations = {
     // Training
     "training_section_title": "Training & Upskilling",
     "training_section_subtitle": "Comprehensive training programs to develop expertise in AI and automation within your organization",
-    "training_program_1_title": "Advanced AI Implementation",
-    "training_program_1_desc": "Master private AI deployment and fine-tuning techniques.",
-    "training_program_2_title": "RAG Systems Architecture",
-    "training_program_2_desc": "Learn to build and integrate knowledge retrieval systems.",
-    "training_program_3_title": "n8n & AI Workflows",
-    "training_program_3_desc": "Create and optimize AI-powered automation workflows.",
-    "training_program_4_title": "AI Security & Compliance",
-    "training_program_4_desc": "Ensure secure and compliant AI implementations.",
+    "training_program_1": {
+      "title": "Advanced AI Implementation",
+      "level": "Advanced",
+      "duration": "3 days",
+      "format": "In-person / Virtual",
+      "modules": [
+        "Introduction to private AI deployment",
+        "Fine-tuning LLMs for specific use cases",
+        "Optimizing model performance",
+        "Security best practices"
+      ]
+    },
+    "training_program_2": {
+      "title": "RAG Systems Architecture",
+      "level": "Intermediate",
+      "duration": "2 days",
+      "format": "Virtual",
+      "modules": [
+        "RAG system architecture",
+        "Vector databases & embeddings",
+        "Building knowledge retrieval systems",
+        "Integration with enterprise systems"
+      ]
+    },
+    "training_program_3": {
+      "title": "n8n & AI Workflows",
+      "level": "Beginner to Intermediate",
+      "duration": "2 days",
+      "format": "Virtual / Self-paced",
+      "modules": [
+        "n8n basics & workflow design",
+        "Integrating AI models in workflows",
+        "Automating common business processes",
+        "Monitoring & maintenance"
+      ]
+    },
+    "training_program_4": {
+      "title": "AI Security & Compliance",
+      "level": "Intermediate",
+      "duration": "2 days",
+      "format": "Virtual",
+      "modules": [
+        "AI security fundamentals",
+        "Data protection & privacy",
+        "Compliance frameworks for AI",
+        "Security auditing & testing"
+      ]
+    },
     "training_duration": "Duration",
     "training_format": "Format",
     "training_modules": "Modules",
@@ -194,10 +234,10 @@ const translations = {
     "join_cursos": "Únase a la plataforma Cursos",
     
     // About Section
-    "about_title": "Sobre KO Soluciones Generales",
+    "about_title": "Sobre Inbloqs",
     "company_desc": "Empoderamos empresas con IA privada, automatización y soluciones locales seguras.",
     "our_mission": "Nuestra Misión",
-    "mission_statement": "En KO Soluciones Generales, estamos comprometidos a democratizar las tecnologías de IA y automatización para empresas de todos los tamaños. Creemos que la IA debe ser:",
+    "mission_statement": "En Inbloqs, estamos comprometidos a democratizar las tecnologías de IA y automatización para empresas de todos los tamaños. Creemos que la IA debe ser:",
     "private_secure": "Privada y Segura",
     "private_secure_desc": "Sus datos permanecen dentro de su infraestructura, nunca salen de su control.",
     "powerful_accessible": "Potente y Accesible",
@@ -305,16 +345,56 @@ const translations = {
     "form_error": "Hubo un error al enviar su formulario. Por favor, inténtelo de nuevo.",
     
     // Training
-    "training_section_title": "Capacitaciones: Formación en IA Empresarial",
+    "training_section_title": "Capacitaciones: Formación en IA Empresarial & Upskilling",
     "training_section_subtitle": "Programas de formación integrales para desarrollar experiencia en IA y automatización en su organización",
-    "training_program_1_title": "Implementación Avanzada de IA",
-    "training_program_1_desc": "Domine la implementación de IA privada y técnicas de ajuste fino.",
-    "training_program_2_title": "Arquitectura de Sistemas RAG",
-    "training_program_2_desc": "Aprenda a construir e integrar sistemas de recuperación de conocimiento.",
-    "training_program_3_title": "n8n y Flujos de Trabajo con IA",
-    "training_program_3_desc": "Cree y optimice flujos de trabajo automatizados potenciados por IA.",
-    "training_program_4_title": "Seguridad y Cumplimiento en IA",
-    "training_program_4_desc": "Asegure implementaciones de IA seguras y conformes.",
+    "training_program_1": {
+      "title": "Implementación Avanzada de IA",
+      "level": "Avanzado",
+      "duration": "3 días",
+      "format": "Presencial / Virtual",
+      "modules": [
+        "Introducción a la implementación de IA privada",
+        "Ajuste fino de LLMs para casos de uso específicos",
+        "Optimización del rendimiento del modelo",
+        "Mejores prácticas de seguridad"
+      ]
+    },
+    "training_program_2": {
+      "title": "Arquitectura de Sistemas RAG",
+      "level": "Intermedio",
+      "duration": "2 días",
+      "format": "Virtual",
+      "modules": [
+        "Arquitectura de sistemas RAG",
+        "Bases de datos vectoriales y embeddings",
+        "Construcción de sistemas de recuperación de conocimiento",
+        "Integración con sistemas empresariales"
+      ]
+    },
+    "training_program_3": {
+      "title": "n8n y Flujos de Trabajo con IA",
+      "level": "Principiante a Intermedio",
+      "duration": "2 días",
+      "format": "Virtual / A su ritmo",
+      "modules": [
+        "Conceptos básicos de n8n y diseño de flujos de trabajo",
+        "Integración de modelos de IA en flujos de trabajo",
+        "Automatización de procesos comerciales comunes",
+        "Monitoreo y mantenimiento"
+      ]
+    },
+    "training_program_4": {
+      "title": "Seguridad y Cumplimiento en IA",
+      "level": "Intermedio",
+      "duration": "2 días",
+      "format": "Virtual",
+      "modules": [
+        "Fundamentos de seguridad en IA",
+        "Protección de datos y privacidad",
+        "Marcos de cumplimiento para IA",
+        "Auditoría y pruebas de seguridad"
+      ]
+    },
     "training_duration": "Duración",
     "training_format": "Formato",
     "training_modules": "Módulos",

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -22,7 +21,7 @@ const BlogPost = () => {
     
     if (foundPost) {
       setPost(foundPost);
-      document.title = `${foundPost.title} | KO Soluciones Generales`;
+      document.title = `${foundPost.title} | Inbloqs`;
     } else {
       navigate('/blog');
     }
@@ -53,8 +52,8 @@ const BlogPost = () => {
             <span className="px-3 py-1 rounded-full bg-ko-primary/20 dark:bg-ko-primary/30 text-ko-primary text-sm font-medium flex items-center">
               <Calendar className="w-4 h-4 mr-1" /> {post.date}
             </span>
-            <span className="px-3 py-1 rounded-full bg-ko-accent/20 dark:bg-ko-accent/30 text-ko-accent text-sm font-medium flex items-center">
-              <User className="w-4 h-4 mr-1" /> {language === "en" ? "KO Team" : "Equipo KO"}
+            <span className="px-3 py-1 rounded-full bg-inbloqs-accent/20 dark:bg-inbloqs-accent/30 text-inbloqs-accent text-sm font-medium flex items-center">
+              <User className="w-4 h-4 mr-1" /> {language === "en" ? "Inbloqs Team" : "Equipo Inbloqs"}
             </span>
           </div>
           

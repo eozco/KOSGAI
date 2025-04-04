@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -15,7 +14,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 const Index = () => {
   // Change the page title
   useEffect(() => {
-    document.title = "KO Soluciones Generales | Enterprise AI & Automation";
+    document.title = "Inbloqs | Enterprise AI & Automation";
   }, []);
 
   return (

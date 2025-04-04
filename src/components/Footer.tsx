@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100/50 dark:bg-gray-900/50 pt-16 pb-6 border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold text-lg mb-4">KO Soluciones</h3>
+            <h3 className="font-bold text-lg mb-4">Inbloqs</h3>
             <ul className="space-y-2">
               <li><a href="#about" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("about_us")}</a></li>
               <li><a href="#contact" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">{t("contact")}</a></li>
@@ -43,8 +43,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center text-gray-600 dark:text-gray-400">
                 <Mail className="w-4 h-4 mr-2" />
-                <a href="mailto:info@kosolucionesgenerales.com" className="hover:text-ko-secondary transition-colors">
-                  info@kosolucionesgenerales.com
+                <a href="mailto:info@inbloqs.com" className="hover:text-inbloqs-secondary transition-colors">
+                  info@inbloqs.com
                 </a>
               </li>
               <li className="flex items-center text-gray-600 dark:text-gray-400">

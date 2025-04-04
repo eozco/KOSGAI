@@ -4,6 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import ParticleNetwork from "./ParticleNetwork";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -37,113 +38,84 @@ const HeroSection = () => {
   };
 
   return (
-    <section 
-      id="home" 
-      className="min-h-screen pt-16 relative flex flex-col justify-center overflow-hidden"
-    >
-      {/* Background accents */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-ko-secondary/10 dark:bg-ko-secondary/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-ko-accent/10 dark:bg-ko-accent/20 rounded-full filter blur-3xl"></div>
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-purple-50/30 to-indigo-50/20 dark:from-gray-900 dark:via-purple-900/20 dark:to-indigo-900/10" />
+      <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-purple-400/10 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-indigo-400/10 dark:bg-indigo-500/10 rounded-full filter blur-3xl animate-pulse" />
+      
+      {/* Particle network background */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-40">
+        <ParticleNetwork />
       </div>
 
-      <div className="container relative z-10 px-4 py-16 mx-auto text-center">
-        {/* Eyebrow text with glow */}
-        <div className="mb-4 inline-block px-4 py-1 rounded-full bg-ko-primary/10 dark:bg-ko-primary/20 text-ko-primary dark:text-ko-light font-medium text-sm">
-          {t("hero_subtitle")}
+      <div className="relative container mx-auto px-4 pt-32 pb-20 min-h-screen flex flex-col justify-center">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            {t("hero_title")}
+          </h1>
+          <p className="text-2xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed">
+            {t("hero_subtitle")}
+          </p>
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all duration-300 text-lg px-8"
+            >
+              {t("request_demo")}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-purple-500/50 dark:border-purple-400/50 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300 text-lg px-8"
+            >
+              {t("learn_more")}
+            </Button>
+          </div>
         </div>
 
-        {/* Main heading with gradient effect */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          {t("hero_title")} <br className="hidden sm:block" />
-          {t("hero_future")}
-        </h1>
-        
-        <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-          {t("hero_description")}
-        </p>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button
-            onClick={handleDeployAIClick}
-            className="bg-ko-primary hover:bg-ko-primary/90 text-white px-8 py-6 text-lg"
-          >
-            {t("deploy_ai")}
-          </Button>
-          <Button
-            onClick={handleExploreAutomationClick}
-            variant="outline"
-            className="border-ko-accent text-ko-accent hover:bg-ko-accent/10 px-8 py-6 text-lg"
-          >
-            {t("explore_automation")}
-          </Button>
-          <Button
-            onClick={handleJoinCursosClick}
-            variant="outline"
-            className="border-ko-primary text-ko-primary hover:bg-ko-primary/10 px-8 py-6 text-lg"
-          >
-            {t("join_cursos")}
-          </Button>
-        </div>
-        
-        {/* Feature highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-white/50 dark:bg-ko-dark/50 border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:shadow-lg transition-all hover:border-ko-secondary/50">
-            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-ko-secondary/20 dark:bg-ko-secondary/30 flex items-center justify-center">
-              <Server className="w-6 h-6 text-ko-secondary" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">{t("onprem_ai_title")}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              {t("feature_private_ai")}
-            </p>
-          </div>
-          
-          <div className="bg-white/50 dark:bg-ko-dark/50 border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:shadow-lg transition-all hover:border-ko-accent/50">
-            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-ko-accent/20 dark:bg-ko-accent/30 flex items-center justify-center">
-              <Zap className="w-6 h-6 text-ko-accent" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">{t("automation_title")}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              {t("feature_ai_workflows")}
-            </p>
-          </div>
-          
-          <div className="bg-white/50 dark:bg-ko-dark/50 border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:shadow-lg transition-all hover:border-ko-primary/50">
-            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-ko-primary/20 dark:bg-ko-primary/30 flex items-center justify-center">
-              <Shield className="w-6 h-6 text-ko-primary" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">{t("infrastructure_title")}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              {t("feature_encryption")}
-            </p>
-          </div>
-        </div>
-        
-        {/* AI Model Visualization */}
-        <div className="mt-16 relative">
-          <div className="glassmorphism rounded-xl p-4 md:p-8 max-w-4xl mx-auto overflow-hidden">
-            <h3 className="text-xl font-semibold mb-2">{t("realtime_ai_models")}</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">{t("realtime_ai_models_desc")}</p>
-            
-            <div className="flex flex-wrap gap-4 justify-center">
-              {["Llama 3", "DeepSeek", "Mistral", "Koboldcpp"].map((model) => (
-                <div 
-                  key={model}
-                  className="px-4 py-2 rounded-md bg-gradient-to-r from-ko-primary/20 to-ko-secondary/20 dark:from-ko-primary/30 dark:to-ko-secondary/30 text-sm font-medium animate-pulse-glow"
-                >
-                  {model}
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              icon: <Shield className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
+              title: t("hero_feature_1_title"),
+              description: t("hero_feature_1_desc"),
+              gradient: "from-violet-600/20 via-purple-600/20 to-indigo-600/20 dark:from-violet-500/30 dark:via-purple-500/30 dark:to-indigo-500/30"
+            },
+            {
+              icon: <Zap className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
+              title: t("hero_feature_2_title"),
+              description: t("hero_feature_2_desc"),
+              gradient: "from-purple-600/20 via-pink-600/20 to-rose-600/20 dark:from-purple-500/30 dark:via-pink-500/30 dark:to-rose-500/30"
+            },
+            {
+              icon: <Server className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
+              title: t("hero_feature_3_title"),
+              description: t("hero_feature_3_desc"),
+              gradient: "from-indigo-600/20 via-violet-600/20 to-purple-600/20 dark:from-indigo-500/30 dark:via-violet-500/30 dark:to-purple-500/30"
+            }
+          ].map((feature, index) => (
+            <div
+              key={index}
+              className="group relative bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300"
+            >
+              <div className={`p-8 relative overflow-hidden bg-gradient-to-br ${feature.gradient}`}>
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-indigo-500/10 dark:from-violet-400/20 dark:via-purple-400/20 dark:to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className="mb-4 p-3 rounded-xl bg-white/70 dark:bg-black/30 backdrop-blur-xl shadow-lg shadow-purple-500/5 group-hover:shadow-purple-500/20 transition-shadow duration-300 inline-block">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 text-gray-600 dark:text-gray-300">
+                    {feature.description}
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
-            
-            <div className="mt-6 h-20 w-full bg-black/5 dark:bg-white/5 rounded-lg flex items-center justify-center">
-              <div className="h-4 w-3/4 bg-gradient-to-r from-ko-primary to-ko-secondary opacity-60 rounded-full animate-pulse"></div>
-            </div>
-            
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-ko-secondary/30 dark:bg-ko-secondary/50 rounded-full filter blur-3xl"></div>
-            <div className="absolute -top-4 -left-4 w-16 h-16 bg-ko-accent/30 dark:bg-ko-accent/50 rounded-full filter blur-3xl"></div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

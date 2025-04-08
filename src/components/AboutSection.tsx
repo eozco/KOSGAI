@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Shield, Zap, Server, Lock } from "lucide-react";
+import { Shield, Globe, Code, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const AboutSection = () => {
@@ -7,27 +7,27 @@ const AboutSection = () => {
 
   const features = [
     {
-      icon: <Lock className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
-      title: t("private_secure"),
-      description: t("private_secure_desc"),
+      icon: <Shield className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
+      title: t("digital_sovereignty"),
+      description: t("digital_sovereignty_desc"),
       gradient: "from-violet-600/20 via-purple-600/20 to-indigo-600/20"
     },
     {
-      icon: <Zap className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
-      title: t("powerful_accessible"),
-      description: t("powerful_accessible_desc"),
+      icon: <Globe className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
+      title: t("regulated_sectors"),
+      description: t("regulated_sectors_desc"),
       gradient: "from-purple-600/20 via-pink-600/20 to-rose-600/20"
     },
     {
-      icon: <Server className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
-      title: t("integrated_automated"),
-      description: t("integrated_automated_desc"),
+      icon: <Code className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />,
+      title: t("open_innovation"),
+      description: t("open_innovation_desc"),
       gradient: "from-indigo-600/20 via-violet-600/20 to-purple-600/20"
     },
     {
-      icon: <Shield className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
-      title: t("compliance_security"),
-      description: t("compliance_security_desc"),
+      icon: <Zap className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
+      title: t("democratizing_ai"),
+      description: t("democratizing_ai_desc"),
       gradient: "from-blue-600/20 via-indigo-600/20 to-violet-600/20"
     }
   ];
@@ -68,7 +68,7 @@ const AboutSection = () => {
               key={index}
               className="group relative bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl p-8 rounded-2xl border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`} />
               <div className="relative">
                 <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 dark:from-violet-900/30 dark:via-purple-900/30 dark:to-indigo-900/30 w-fit">
                   {feature.icon}

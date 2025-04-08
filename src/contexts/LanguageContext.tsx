@@ -29,8 +29,8 @@ const translations = {
     "join_cursos": "Join Cursos learning platform",
     
     // About Section
-    "about_title": "About Inbloqs",
-    "company_desc": "Empowering businesses with private AI, automation, and secure on-premise solutions.",
+    "about_title": "Our Vision",
+    "company_desc": "We are committed to democratizing AI access while ensuring digital sovereignty and data privacy. Our mission is to empower organizations of all sizes with secure, ethical, and efficient AI solutions.",
     "our_mission": "Our Mission",
     "mission_statement": "At Inbloqs, we're committed to democratizing AI and automation technologies for enterprises of all sizes. We believe that AI should be:",
     "private_secure": "Private & Secure",
@@ -48,6 +48,19 @@ const translations = {
     "automation_list": "• n8n workflows\n• AI-driven decision making\n• Microsoft 365 integration\n• Data pipelines",
     "security_stack": "Security",
     "security_list": "• End-to-end encryption\n• Privacy-first architecture\n• Secure API integration\n• Role-based access control",
+    
+    // About Features
+    "digital_sovereignty": "Digital Sovereignty",
+    "digital_sovereignty_desc": "Ensuring complete control over your AI processes and data with on-premise solutions that maintain independence and security.",
+    
+    "regulated_sectors": "Regulated Industries",
+    "regulated_sectors_desc": "Specialized solutions for highly regulated sectors, enabling AI adoption while ensuring compliance and sensitive data protection.",
+    
+    "open_innovation": "Open Innovation",
+    "open_innovation_desc": "Promoting open-source solutions and collaborative development to drive innovation and transparency in AI implementation.",
+    
+    "democratizing_ai": "Democratizing AI",
+    "democratizing_ai_desc": "Making advanced AI capabilities accessible to organizations of all sizes through scalable and cost-effective solutions.",
     
     // Solutions Section
     "solutions_title": "Our Solutions & Services",
@@ -280,8 +293,8 @@ const translations = {
     "join_cursos": "Únase a la plataforma Cursos",
     
     // About Section
-    "about_title": "Sobre Inbloqs",
-    "company_desc": "Empoderamos empresas con IA privada, automatización y soluciones locales seguras.",
+    "about_title": "Nuestra Visión",
+    "company_desc": "Estamos comprometidos con la democratización del acceso a la IA mientras aseguramos la soberanía digital y privacidad de datos. Nuestra misión es empoderar a organizaciones de todos los tamaños con soluciones de IA seguras, éticas y eficientes.",
     "our_mission": "Nuestra Misión",
     "mission_statement": "En Inbloqs, estamos comprometidos a democratizar las tecnologías de IA y automatización para empresas de todos los tamaños. Creemos que la IA debe ser:",
     "private_secure": "Privada y Segura",
@@ -299,6 +312,19 @@ const translations = {
     "automation_list": "• Flujos de trabajo n8n\n• Toma de decisiones impulsada por IA\n• Integración con Microsoft 365\n• Canales de datos",
     "security_stack": "Seguridad",
     "security_list": "• Encriptación de extremo a extremo\n• Arquitectura centrada en la privacidad\n• Integración API segura\n• Control de acceso basado en roles",
+    
+    // About Features
+    "digital_sovereignty": "Soberanía Digital",
+    "digital_sovereignty_desc": "Garantizando control total sobre tus procesos de IA y datos con soluciones on-premise que mantienen la independencia y seguridad.",
+    
+    "regulated_sectors": "Sectores Regulados",
+    "regulated_sectors_desc": "Soluciones especializadas para sectores altamente regulados, facilitando la adopción de IA mientras se asegura el cumplimiento y la protección de datos sensibles.",
+    
+    "open_innovation": "Innovación Abierta",
+    "open_innovation_desc": "Promoviendo soluciones de código abierto y desarrollo colaborativo para impulsar la innovación y transparencia en la implementación de IA.",
+    
+    "democratizing_ai": "Democratizando la IA",
+    "democratizing_ai_desc": "Haciendo las capacidades avanzadas de IA accesibles a organizaciones de todos los tamaños mediante soluciones escalables y rentables.",
     
     // Solutions Section
     "solutions_title": "Nuestras Soluciones y Servicios",

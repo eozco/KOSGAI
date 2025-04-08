@@ -48,43 +48,43 @@ const CaseStudiesSection = () => {
   
   const caseStudies = [
     {
-      title: t("case_study_1_subtitle"),
-      company: t("case_study_1_title"),
+      title: t("case_study_1_title"),
+      company: t("case_study_1_subtitle"),
       description: t("case_study_1_desc"),
       metrics: [
-        { icon: BarChart, label: t("efficiency"), value: "87%" },
-        { icon: Users, label: t("adoption"), value: "100%" },
-        { icon: Clock, label: t("time_saved"), value: "65%" },
+        { icon: BarChart, label: t("efficiency"), value: "75%" },
+        { icon: Users, label: t("adoption"), value: "95%" },
+        { icon: Clock, label: t("time_saved"), value: "60%" },
       ]
     },
     {
-      title: t("case_study_2_subtitle"),
-      company: t("case_study_2_title"),
+      title: t("case_study_2_title"),
+      company: t("case_study_2_subtitle"),
       description: t("case_study_2_desc"),
       metrics: [
-        { icon: BarChart, label: t("cost_savings"), value: "42%" },
-        { icon: Users, label: t("departments"), value: "5+" },
-        { icon: Clock, label: t("hours_week"), value: "120+" },
+        { icon: BarChart, label: t("accuracy"), value: "89%" },
+        { icon: Users, label: t("departments"), value: "3" },
+        { icon: Clock, label: t("hours_week"), value: "45+" },
       ]
     },
     {
-      title: t("case_study_3_subtitle"),
-      company: t("case_study_3_title"),
+      title: t("case_study_3_title"),
+      company: t("case_study_3_subtitle"),
       description: t("case_study_3_desc"),
       metrics: [
-        { icon: BarChart, label: t("accuracy"), value: "94%" },
-        { icon: Users, label: t("daily_users"), value: "150+" },
-        { icon: Clock, label: t("response_time"), value: "<3s" },
+        { icon: BarChart, label: t("accuracy"), value: "92%" },
+        { icon: Users, label: t("daily_users"), value: "50+" },
+        { icon: Clock, label: t("response_time"), value: "<5s" },
       ]
     },
     {
-      title: t("case_study_4_subtitle"),
-      company: t("case_study_4_title"),
+      title: t("case_study_4_title"),
+      company: t("case_study_4_subtitle"),
       description: t("case_study_4_desc"),
       metrics: [
-        { icon: BarChart, label: t("completion"), value: "92%" },
-        { icon: Users, label: t("staff_trained"), value: "1200+" },
-        { icon: Clock, label: t("training_time"), value: "50h" },
+        { icon: BarChart, label: t("efficiency"), value: "85%" },
+        { icon: Users, label: t("departments"), value: "4" },
+        { icon: Clock, label: t("time_saved"), value: "70%" },
       ]
     }
   ];

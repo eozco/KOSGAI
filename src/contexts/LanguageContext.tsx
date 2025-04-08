@@ -84,17 +84,17 @@ const translations = {
     "realtime_ai_models_desc": "See our on-premise AI solutions in action",
     
     // Case Studies
-    "case_studies_title": "Client Success Stories",
-    "case_studies_subtitle": "Real implementations and results from our specialized AI solutions",
-    "case_study_1_title": "Genomics Research Institute",
-    "case_study_1_subtitle": "AI-Powered Genomic Analysis",
-    "case_study_1_desc": "Implemented on-premise AI model for processing genomic sequences, reducing analysis time while maintaining data privacy and research integrity.",
-    "case_study_2_title": "Pharmaceutical Company",
-    "case_study_2_subtitle": "Drug Discovery Automation",
-    "case_study_2_desc": "Deployed secure AI workflows for molecular analysis and drug interaction prediction, accelerating research phases while ensuring data confidentiality.",
+    "case_studies_title": "Practical Use Cases",
+    "case_studies_subtitle": "Demonstration of our AI solutions capabilities and potential results",
+    "case_study_1_title": "Technical Documentation System",
+    "case_study_1_subtitle": "Local AI Integration",
+    "case_study_1_desc": "Demonstration of local AI model implementation for secure document processing, showing potential time reduction while maintaining data privacy and system integrity.",
+    "case_study_2_title": "Enterprise Compliance System",
+    "case_study_2_subtitle": "Microsoft 365 & Local AI Integration",
+    "case_study_2_desc": "Integration of local AI with Microsoft 365 for technical documentation and compliance systems, ensuring data sovereignty and regulatory compliance.",
     "case_study_3_title": "Public Security Agency",
     "case_study_3_subtitle": "Secure Pattern Analysis",
-    "case_study_3_desc": "Implemented privacy-first AI system for pattern detection in public safety data, ensuring complete data sovereignty and regulatory compliance.",
+    "case_study_3_desc": "Implementation of privacy-first AI system for pattern detection in public safety data, ensuring complete data sovereignty and regulatory compliance.",
     "case_study_4_title": "Information Systems Provider",
     "case_study_4_subtitle": "AI-Enhanced Monitoring",
     "case_study_4_desc": "Developed secure monitoring system with AI-powered anomaly detection, enabling real-time threat identification while maintaining data privacy.",
@@ -102,7 +102,7 @@ const translations = {
     "adoption": "Data Coverage",
     "time_saved": "Time Reduction",
     "cost_savings": "Cost Reduction",
-    "departments": "Teams Using",
+    "capacity": "User Capacity",
     "hours_week": "Weekly Hours Saved",
     "accuracy": "Detection Accuracy",
     "daily_users": "Daily Users",
@@ -213,7 +213,51 @@ const translations = {
     "gdpr_compliance": "GDPR Compliance",
     "rights_reserved": "All rights reserved",
     "compliance_security": "Compliance & Security",
-    "compliance_security_desc": "Enterprise-grade security and compliance frameworks for AI deployments."
+    "compliance_security_desc": "Enterprise-grade security and compliance frameworks for AI deployments.",
+    success_stories: {
+      title: "Practical Use Cases",
+      subtitle: "Demostraciones prácticas de nuestras soluciones de IA",
+      stories: [
+        {
+          title: "Local AI Integration",
+          description: "Demostración de soluciones de IA local para procesamiento seguro y privado de datos",
+          metrics: {
+            efficiency: "90%",
+            accuracy: "95%",
+            users: "500+",
+            time: "3 meses"
+          }
+        },
+        {
+          title: "Microsoft 365 Integration",
+          description: "Demostración de integración de IA local con Microsoft 365 para documentación técnica y cumplimiento",
+          metrics: {
+            efficiency: "85%",
+            accuracy: "92%",
+            users: "1000+",
+            time: "4 meses"
+          }
+        },
+        {
+          title: "AI-Powered Automation",
+          description: "Demostración de automatización impulsada por IA para procesos empresariales",
+          metrics: {
+            efficiency: "95%",
+            accuracy: "98%",
+            users: "2000+",
+            time: "6 meses"
+          }
+        }
+      ]
+    },
+    metrics: {
+      efficiency: "Processing Speed",
+      capacity: "User Capacity",
+      time_saved: "Time Reduction",
+      accuracy: "Detection Accuracy",
+      response_time: "Response Time",
+      hours_week: "Weekly Hours Saved"
+    }
   },
   
   es: {
@@ -221,7 +265,7 @@ const translations = {
     "home": "Inicio",
     "about": "Nosotros",
     "solutions": "Soluciones",
-    "case-studies": "Casos de Éxito",
+    "case-studies": "Casos de Uso Práctico",
     "blog": "Blog",
     "contact": "Contacto",
     "request_demo": "Solicitar Demo",
@@ -291,25 +335,25 @@ const translations = {
     "realtime_ai_models_desc": "Vea nuestras soluciones de IA locales en acción",
     
     // Case Studies
-    "case_studies_title": "Casos de Éxito",
-    "case_studies_subtitle": "Implementaciones reales y resultados de nuestras soluciones especializadas de IA",
-    "case_study_1_title": "Instituto de Investigación Genómica",
-    "case_study_1_subtitle": "Análisis Genómico con IA",
-    "case_study_1_desc": "Implementación de modelo de IA local para procesamiento de secuencias genómicas, reduciendo tiempo de análisis mientras se mantiene la privacidad de datos e integridad de la investigación.",
-    "case_study_2_title": "Empresa Farmacéutica",
-    "case_study_2_subtitle": "Automatización de Descubrimiento de Fármacos",
-    "case_study_2_desc": "Despliegue de flujos de trabajo de IA seguros para análisis molecular y predicción de interacciones medicamentosas, acelerando fases de investigación mientras se garantiza la confidencialidad.",
+    "case_studies_title": "Casos de Uso Práctico",
+    "case_studies_subtitle": "Demostración de capacidades y resultados potenciales de nuestras soluciones de IA",
+    "case_study_1_title": "Sistema de Documentación Técnica",
+    "case_study_1_subtitle": "Integración de IA Local",
+    "case_study_1_desc": "Demostración de implementación de modelo de IA local para procesamiento seguro de documentos, mostrando la reducción potencial de tiempo mientras se mantiene la privacidad de datos e integridad del sistema.",
+    "case_study_2_title": "Sistema de Cumplimiento Empresarial",
+    "case_study_2_subtitle": "Integración de Microsoft 365 y IA Local",
+    "case_study_2_desc": "Demostración de integración de IA local con Microsoft 365 para documentación técnica y sistemas de cumplimiento, asegurando soberanía de datos y conformidad regulatoria.",
     "case_study_3_title": "Agencia de Seguridad Pública",
     "case_study_3_subtitle": "Análisis Seguro de Patrones",
-    "case_study_3_desc": "Implementación de sistema de IA centrado en la privacidad para detección de patrones en datos de seguridad pública, asegurando soberanía completa de datos y cumplimiento regulatorio.",
+    "case_study_3_desc": "Demostración de sistema de IA centrado en la privacidad para detección de patrones en datos de seguridad pública, asegurando soberanía completa de datos y cumplimiento regulatorio.",
     "case_study_4_title": "Proveedor de Sistemas de Información",
     "case_study_4_subtitle": "Monitoreo Mejorado con IA",
-    "case_study_4_desc": "Desarrollo de sistema de monitoreo seguro con detección de anomalías potenciada por IA, permitiendo identificación de amenazas en tiempo real mientras se mantiene la privacidad de datos.",
+    "case_study_4_desc": "Demostración de sistema de monitoreo seguro con detección de anomalías potenciada por IA, permitiendo identificación de amenazas en tiempo real mientras se mantiene la privacidad de datos.",
     "efficiency": "Velocidad de Proceso",
     "adoption": "Cobertura de Datos",
     "time_saved": "Reducción de Tiempo",
     "cost_savings": "Reducción de Costos",
-    "departments": "Equipos Usando",
+    "capacity": "Capacidad de Usuarios",
     "hours_week": "Horas Semanales Ahorradas",
     "accuracy": "Precisión de Detección",
     "daily_users": "Usuarios Diarios",
@@ -411,7 +455,7 @@ const translations = {
     "it_infrastructure": "Infraestructura TI",
     "resources": "Recursos", 
     "whitepapers": "Documentos Técnicos",
-    "case_studies": "Casos de Éxito",
+    "case_studies": "Casos de Uso Práctico",
     "documentation": "Documentación",
     "legal": "Legal",
     "privacy_policy": "Política de Privacidad",
@@ -420,7 +464,51 @@ const translations = {
     "gdpr_compliance": "Cumplimiento GDPR",
     "rights_reserved": "Todos los derechos reservados",
     "compliance_security": "Cumplimiento y Seguridad",
-    "compliance_security_desc": "Marcos de seguridad y cumplimiento de nivel empresarial para implementaciones de IA."
+    "compliance_security_desc": "Marcos de seguridad y cumplimiento de nivel empresarial para implementaciones de IA.",
+    success_stories: {
+      title: "Casos de Uso Práctico",
+      subtitle: "Demostraciones prácticas de nuestras soluciones de IA",
+      stories: [
+        {
+          title: "Integración de IA Local",
+          description: "Demostración de soluciones de IA local para procesamiento seguro y privado de datos",
+          metrics: {
+            efficiency: "90%",
+            accuracy: "95%",
+            users: "500+",
+            time: "3 meses"
+          }
+        },
+        {
+          title: "Integración de Microsoft 365",
+          description: "Demostración de integración de IA local con Microsoft 365 para documentación técnica y cumplimiento",
+          metrics: {
+            efficiency: "85%",
+            accuracy: "92%",
+            users: "1000+",
+            time: "4 meses"
+          }
+        },
+        {
+          title: "Automatización con IA",
+          description: "Demostración de automatización impulsada por IA para procesos empresariales",
+          metrics: {
+            efficiency: "95%",
+            accuracy: "98%",
+            users: "2000+",
+            time: "6 meses"
+          }
+        }
+      ]
+    },
+    metrics: {
+      efficiency: "Velocidad de Proceso",
+      capacity: "Capacidad de Usuarios",
+      time_saved: "Reducción de Tiempo",
+      accuracy: "Precisión de Detección",
+      response_time: "Tiempo de Respuesta",
+      hours_week: "Horas Semanales Ahorradas"
+    }
   }
 };
 
@@ -438,7 +526,18 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    const keys = key.split('.');
+    let value = translations[language as keyof typeof translations];
+    
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k as keyof typeof value];
+      } else {
+        return key;
+      }
+    }
+    
+    return value as string;
   };
 
   useEffect(() => {

@@ -5,7 +5,7 @@ type Language = "es" | "en";
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => any;
 }
 
 const translations = {
@@ -45,7 +45,7 @@ const translations = {
     "local_ai": "Local AI Hosting",
     "local_ai_list": "• Koboldcpp\n• OpenWebUI\n• Docker & Kubernetes\n• On-premise deployment",
     "automation_stack": "Automation",
-    "automation_list": "• n8n workflows\n• AI-driven decision making\n• Microsoft 365 integration\n• Data pipelines",
+    "automation_list": "• Workflows\n• AI-driven decision making\n• Microsoft 365 integration\n• Data pipelines",
     "security_stack": "Security",
     "security_list": "• End-to-end encryption\n• Privacy-first architecture\n• Secure API integration\n• Role-based access control",
     
@@ -67,7 +67,7 @@ const translations = {
     "solutions_subtitle": "Comprehensive AI and automation solutions tailored for enterprise needs",
     "onprem_ai_title": "On-Prem AI & Business Intelligence",
     "onprem_ai_desc": "Deploy AI models within your secure infrastructure for complete data control.",
-    "automation_title": "Enterprise Automation with n8n",
+    "automation_title": "Enterprise Automation",
     "automation_desc": "Connect AI capabilities with your business operations through intelligent workflows.",
     "training_title": "Training & Upskilling",
     "training_desc": "Empower your teams with the knowledge to leverage AI and automation.",
@@ -108,9 +108,9 @@ const translations = {
     "case_study_3_title": "Public Security Agency",
     "case_study_3_subtitle": "Secure Pattern Analysis",
     "case_study_3_desc": "Implementation of privacy-first AI system for pattern detection in public safety data, ensuring complete data sovereignty and regulatory compliance.",
-    "case_study_4_title": "Information Systems Provider",
-    "case_study_4_subtitle": "AI-Enhanced Monitoring",
-    "case_study_4_desc": "Developed secure monitoring system with AI-powered anomaly detection, enabling real-time threat identification while maintaining data privacy.",
+    "case_study_4_title": "Genetic Variant Analysis & Deployment",
+    "case_study_4_subtitle": "Genetic Variant Analysis & Deployment",
+    "case_study_4_desc": "Demonstration of a secure, AI-powered system for genetic variant analysis and deployment, capable of detecting anomalies and threats in real time without compromising data privacy.",
     "efficiency": "Processing Speed",
     "adoption": "Data Coverage",
     "time_saved": "Time Reduction",
@@ -309,7 +309,7 @@ const translations = {
     "local_ai": "Hosting de IA Local",
     "local_ai_list": "• Koboldcpp\n• OpenWebUI\n• Docker y Kubernetes\n• Implementación local",
     "automation_stack": "Automatización",
-    "automation_list": "• Flujos de trabajo n8n\n• Toma de decisiones impulsada por IA\n• Integración con Microsoft 365\n• Canales de datos",
+    "automation_list": "• Flujos de trabajo\n• Toma de decisiones impulsada por IA\n• Integración con Microsoft 365\n• Canales de datos",
     "security_stack": "Seguridad",
     "security_list": "• Encriptación de extremo a extremo\n• Arquitectura centrada en la privacidad\n• Integración API segura\n• Control de acceso basado en roles",
     
@@ -331,7 +331,7 @@ const translations = {
     "solutions_subtitle": "Soluciones integrales de IA y automatización adaptadas a las necesidades empresariales",
     "onprem_ai_title": "IA Local e Inteligencia Empresarial",
     "onprem_ai_desc": "Implemente modelos de IA dentro de su infraestructura segura para un control total de datos.",
-    "automation_title": "Automatización Empresarial con n8n",
+    "automation_title": "Automatización Empresarial",
     "automation_desc": "Conecte las capacidades de IA con sus operaciones comerciales mediante flujos de trabajo inteligentes.",
     "training_title": "Training & Upskilling",
     "training_desc": "Empower your teams with the knowledge to leverage AI and automation.",
@@ -372,9 +372,9 @@ const translations = {
     "case_study_3_title": "Agencia de Seguridad Pública",
     "case_study_3_subtitle": "Análisis Seguro de Patrones",
     "case_study_3_desc": "Demostración de sistema de IA centrado en la privacidad para detección de patrones en datos de seguridad pública, asegurando soberanía completa de datos y cumplimiento regulatorio.",
-    "case_study_4_title": "Proveedor de Sistemas de Información",
-    "case_study_4_subtitle": "Monitoreo Mejorado con IA",
-    "case_study_4_desc": "Demostración de sistema de monitoreo seguro con detección de anomalías potenciada por IA, permitiendo identificación de amenazas en tiempo real mientras se mantiene la privacidad de datos.",
+    "case_study_4_title": "Análisis y Despliegue Variantes Genéticas",
+    "case_study_4_subtitle": "Análisis y Despliegue Variantes Genéticas",
+    "case_study_4_desc": "Demostración de un sistema seguro de análisis y despliegue de variantes genéticas potenciado por IA, capaz de detectar anomalías y amenazas en tiempo real sin comprometer la privacidad de los datos.",
     "efficiency": "Velocidad de Proceso",
     "adoption": "Cobertura de Datos",
     "time_saved": "Reducción de Tiempo",
@@ -444,7 +444,7 @@ const translations = {
       ]
     },
     "training_program_3": {
-      "title": "n8n y Flujos de Trabajo con IA",
+      "title": "n8n & Flujos de Trabajo con IA",
       "level": "Intermedio",
       "duration": "1 semana",
       "format": "Virtual",
@@ -496,7 +496,7 @@ const translations = {
       subtitle: "Demostraciones prácticas de nuestras soluciones de IA",
       stories: [
         {
-          title: "Integración de IA Local",
+          title: "Local AI Integration",
           description: "Demostración de soluciones de IA local para procesamiento seguro y privado de datos",
           metrics: {
             efficiency: "90%",
@@ -506,7 +506,7 @@ const translations = {
           }
         },
         {
-          title: "Integración de Microsoft 365",
+          title: "Microsoft 365 Integration",
           description: "Demostración de integración de IA local con Microsoft 365 para documentación técnica y cumplimiento",
           metrics: {
             efficiency: "85%",
@@ -516,7 +516,7 @@ const translations = {
           }
         },
         {
-          title: "Automatización con IA",
+          title: "AI-Powered Automation",
           description: "Demostración de automatización impulsada por IA para procesos empresariales",
           metrics: {
             efficiency: "95%",
@@ -533,7 +533,18 @@ const translations = {
       time_saved: "Reducción de Tiempo",
       accuracy: "Precisión de Detección",
       response_time: "Tiempo de Respuesta",
-      hours_week: "Horas Semanales Ahorradas"
+      hours_week: "Horas Semanales Ahorradas",
+      efficiency_improvement: "Mejora de Eficiencia",
+      process_automation_rate: "Tasa de Automatización de Procesos",
+      error_reduction: "Reducción de Errores",
+      document_accuracy: "Precisión Documental",
+      processing_speed: "Velocidad de Procesamiento",
+      cost_savings: "Ahorro de Costos",
+      response_accuracy: "Precisión de Respuesta",
+      customer_satisfaction: "Satisfacción del Cliente",
+      deployment_time: "Tiempo de Despliegue",
+      result_accuracy: "Precisión de Resultados",
+      data_processing_efficiency: "Eficiencia en el Procesamiento de Datos"
     }
   }
 };
@@ -551,9 +562,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('language', lang);
   };
 
-  const t = (key: string): string => {
+  const t = (key: string): any => {
     const keys = key.split('.');
-    let value = translations[language as keyof typeof translations];
+    let value: any = translations[language as keyof typeof translations];
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
@@ -563,7 +574,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
     }
     
-    return value as string;
+    return value;
   };
 
   useEffect(() => {

@@ -1,15 +1,15 @@
 import { ArrowRight, Server, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+
+
 import { toast } from "@/components/ui/use-toast";
 import ParticleNetwork from "./ParticleNetwork";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const { t } = useLanguage();
-  const [demoRequested, setDemoRequested] = useState(false);
+  
 
   const handleDeployAIClick = () => {
     // Scroll to solutions section
@@ -29,14 +29,7 @@ const HeroSection = () => {
     });
   };
 
-  const handleJoinCursosClick = () => {
-    // Scroll to training section
-    document.getElementById("training")?.scrollIntoView({ behavior: "smooth" });
-    toast({
-      title: "Cursos Learning Platform",
-      description: "Join our comprehensive AI training programs.",
-    });
-  };
+  
 
   const features = [
     {
@@ -106,6 +99,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all duration-300"
+              onClick={handleDeployAIClick}
             >
               {t("deploy_ai")}
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -114,6 +108,7 @@ const HeroSection = () => {
               variant="outline" 
               size="lg"
               className="border-2 border-purple-500/50 dark:border-purple-400/50 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300"
+              onClick={handleExploreAutomationClick}
             >
               {t("explore_automation")}
             </Button>

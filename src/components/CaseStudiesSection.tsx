@@ -1,4 +1,4 @@
-import { BarChart, Users, Clock } from "lucide-react";
+import { BarChart, CheckCircle, Zap, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CaseStudy = ({ 
@@ -52,9 +52,9 @@ const CaseStudiesSection = () => {
       company: t("case_study_1_subtitle"),
       description: t("case_study_1_desc"),
       metrics: [
-        { icon: BarChart, label: t("efficiency"), value: "75%" },
-        { icon: Users, label: t("adoption"), value: "95%" },
-        { icon: Clock, label: t("time_saved"), value: "60%" },
+        { icon: BarChart, label: t("metrics.efficiency_improvement"), value: "75%" },
+        { icon: Clock, label: t("metrics.process_automation_rate"), value: "85%" },
+        { icon: CheckCircle, label: t("metrics.error_reduction"), value: "40%" },
       ]
     },
     {
@@ -62,9 +62,9 @@ const CaseStudiesSection = () => {
       company: t("case_study_2_subtitle"),
       description: t("case_study_2_desc"),
       metrics: [
-        { icon: BarChart, label: t("accuracy"), value: "89%" },
-        { icon: Users, label: t("departments"), value: "3" },
-        { icon: Clock, label: t("hours_week"), value: "45+" },
+        { icon: BarChart, label: t("metrics.document_accuracy"), value: "89%" },
+        { icon: Clock, label: t("metrics.processing_speed"), value: "2x faster" },
+        { icon: BarChart, label: t("metrics.cost_savings"), value: "$10K/year" },
       ]
     },
     {
@@ -72,9 +72,9 @@ const CaseStudiesSection = () => {
       company: t("case_study_3_subtitle"),
       description: t("case_study_3_desc"),
       metrics: [
-        { icon: BarChart, label: t("accuracy"), value: "92%" },
-        { icon: Users, label: t("daily_users"), value: "50+" },
-        { icon: Clock, label: t("response_time"), value: "<5s" },
+        { icon: BarChart, label: t("metrics.response_accuracy"), value: "92%" },
+        { icon: Clock, label: t("metrics.response_time"), value: "<5s" },
+        { icon: Zap, label: t("metrics.customer_satisfaction"), value: "4.8/5" },
       ]
     },
     {
@@ -82,9 +82,9 @@ const CaseStudiesSection = () => {
       company: t("case_study_4_subtitle"),
       description: t("case_study_4_desc"),
       metrics: [
-        { icon: BarChart, label: t("efficiency"), value: "85%" },
-        { icon: Users, label: t("departments"), value: "4" },
-        { icon: Clock, label: t("time_saved"), value: "70%" },
+        { icon: BarChart, label: t("metrics.data_processing_efficiency"), value: "85%" },
+        { icon: BarChart, label: t("metrics.deployment_time"), value: "2 weeks" },
+        { icon: CheckCircle, label: t("metrics.result_accuracy"), value: "97%" },
       ]
     }
   ];

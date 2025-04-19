@@ -4,13 +4,11 @@ import {
   Shield, 
   Cloud, 
   Database, 
-  ArrowRight, 
   CheckCircle, 
-  Users, 
   Clock, 
   Zap,
-  FileText,
-  Book
+  FileText, 
+  BarChart
 } from 'lucide-react';
 
 export default function SuccessStoriesSection() {
@@ -23,9 +21,9 @@ export default function SuccessStoriesSection() {
       subtitle: t('case_study_1_subtitle'),
       description: t('case_study_1_desc'),
       metrics: [
-        { icon: Zap, label: t('metrics.efficiency'), value: "75%" },
-        { icon: Users, label: t('metrics.capacity'), value: "hasta 50" },
-        { icon: Clock, label: t('metrics.time_saved'), value: "60%" }
+        { icon: Zap, label: "Efficiency Improvement", value: "75%" },
+        { icon: Clock, label: "Process Automation Rate", value: "85%" },
+        { icon: CheckCircle, label: "Error Reduction", value: "40%" }
       ],
       gradient: 'from-blue-500/20 to-blue-600/20'
     },
@@ -35,9 +33,9 @@ export default function SuccessStoriesSection() {
       subtitle: t('case_study_2_subtitle'),
       description: t('case_study_2_desc'),
       metrics: [
-        { icon: Zap, label: t('metrics.efficiency'), value: "89%" },
-        { icon: Users, label: t('metrics.capacity'), value: "hasta 100" },
-        { icon: Clock, label: t('metrics.hours_week'), value: "45+" }
+        { icon: Zap, label: "Document Accuracy", value: "89%" },
+        { icon: Clock, label: "Processing Speed", value: "2x faster" },
+        { icon: BarChart, label: "Cost Savings", value: "$10K/year" }
       ],
       gradient: 'from-purple-500/20 to-purple-600/20'
     },
@@ -47,9 +45,9 @@ export default function SuccessStoriesSection() {
       subtitle: t('case_study_3_subtitle'),
       description: t('case_study_3_desc'),
       metrics: [
-        { icon: CheckCircle, label: t('metrics.accuracy'), value: "92%" },
-        { icon: Users, label: t('metrics.capacity'), value: "hasta 250" },
-        { icon: Clock, label: t('metrics.response_time'), value: "<5s" }
+        { icon: CheckCircle, label: "Response Accuracy", value: "92%" },
+        { icon: Clock, label: "Avg. Response Time", value: "<5s" },
+        { icon: Zap, label: "Customer Satisfaction", value: "4.8/5" }
       ],
       gradient: 'from-green-500/20 to-green-600/20'
     },
@@ -59,9 +57,9 @@ export default function SuccessStoriesSection() {
       subtitle: t('case_study_4_subtitle'),
       description: t('case_study_4_desc'),
       metrics: [
-        { icon: Zap, label: t('metrics.efficiency'), value: "85%" },
-        { icon: Users, label: t('metrics.capacity'), value: "hasta 500" },
-        { icon: Clock, label: t('metrics.time_saved'), value: "70%" }
+        { icon: Zap, label: "Data Processing Efficiency", value: "85%" },
+        { icon: BarChart, label: "Deployment Time", value: "2 weeks" },
+        { icon: CheckCircle, label: "Result Accuracy", value: "97%" }
       ],
       gradient: 'from-indigo-500/20 to-indigo-600/20'
     }

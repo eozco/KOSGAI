@@ -106,12 +106,30 @@ const TrainingSection = () => {
                       variant="outline" 
                       size="lg"
                       className="border-2 border-purple-500/50 dark:border-purple-400/50 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300"
+                      onClick={() => {
+                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                        setTimeout(() => {
+                          (window as any).toast && (window as any).toast({
+                            title: data.title,
+                            description: t("training_details") + ": " + data.title,
+                          });
+                        }, 700);
+                      }}
                     >
                       {t("training_details")}
                     </Button>
                     <Button 
                       size="lg"
                       className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all duration-300"
+                      onClick={() => {
+                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                        setTimeout(() => {
+                          (window as any).toast && (window as any).toast({
+                            title: t("training_register"),
+                            description: t("training_register") + ": " + data.title,
+                          });
+                        }, 700);
+                      }}
                     >
                       {t("training_register")}
                     </Button>

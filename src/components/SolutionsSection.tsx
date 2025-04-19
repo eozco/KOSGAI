@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Server, Workflow, Database, Shield } from "lucide-react";
+import { Server, Workflow, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -106,6 +106,25 @@ const SolutionsSection = () => {
                 <Button 
                   variant="outline"
                   className="w-full border-2 border-purple-500/50 dark:border-purple-400/50 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300"
+                  onClick={() => {
+                    if (solution.buttonText === t("training_title") || solution.title === t("training_title")) {
+                      document.getElementById("training")?.scrollIntoView({ behavior: "smooth" });
+                      setTimeout(() => {
+                        (window as any).toast && (window as any).toast({
+                          title: t("training_title"),
+                          description: t("training_desc"),
+                        });
+                      }, 700);
+                    } else {
+                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                      setTimeout(() => {
+                        (window as any).toast && (window as any).toast({
+                          title: t("request_demo"),
+                          description: t("We'll be in touch soon!"),
+                        });
+                      }, 700);
+                    }
+                  }}
                 >
                   {solution.buttonText}
                 </Button>

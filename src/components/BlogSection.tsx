@@ -22,7 +22,7 @@ const BlogPost = ({
   const { t } = useLanguage();
   
   return (
-    <div className="group relative bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
+    <Link to={`/blog/${slug}`} className="group relative block bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-purple-100/50 dark:border-purple-900/50 hover:border-purple-300 dark:hover:border-purple-700 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300">
       <div className={`h-48 ${imageColor} flex items-center justify-center relative overflow-hidden`}>
         <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-purple-500/10 to-indigo-500/10 dark:from-violet-400/20 dark:via-purple-400/20 dark:to-indigo-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="w-20 h-20 rounded-2xl bg-white/20 dark:bg-black/20 backdrop-blur-sm transform rotate-12 group-hover:rotate-45 transition-transform duration-300"></div>
@@ -39,17 +39,14 @@ const BlogPost = ({
         </div>
         <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{title}</h3>
         <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3">{excerpt}</p>
-        <Link 
-          to={`/blog/${slug}`} 
-          className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors"
-        >
+        <span className="inline-flex items-center text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 font-medium transition-colors">
           {t("read_more")} 
           <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
-        </Link>
+        </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

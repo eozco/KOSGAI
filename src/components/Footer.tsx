@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Logo from "./Logo";
 
@@ -66,24 +66,7 @@ const Footer = () => {
             <Logo />
           </div>
           
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Facebook className="w-5 h-5" />
-              <span className="sr-only">Facebook</span>
-            </a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Twitter className="w-5 h-5" />
-              <span className="sr-only">Twitter</span>
-            </a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Linkedin className="w-5 h-5" />
-              <span className="sr-only">LinkedIn</span>
-            </a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-ko-secondary transition-colors">
-              <Github className="w-5 h-5" />
-              <span className="sr-only">GitHub</span>
-            </a>
-          </div>
+          
           
           <div className="text-sm text-gray-600 dark:text-gray-400">
             &copy; {currentYear} KO Soluciones Generales. {t("rights_reserved")}
